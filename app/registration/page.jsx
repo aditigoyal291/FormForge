@@ -1,18 +1,21 @@
 "use client";
-import Form, { Domain, DomainList } from "@/components/form/Form";
-import WedDev from "@/components/form/DomainQuestion";
 import SubHero from "@/components/SubHero";
+import Form from "@/components/form/Form";
 import React, { useState } from "react";
+import DomainList from "@/components/form/DomainList";
 import DomainQuestion from "@/components/form/DomainQuestion";
 
 const RegistrationPage = () => {
   const [userData, setUserData] = useState({});
-  const [domain, setDomain] = useState(null);
-  const [page, setPage] = useState(1);
+  const [domain, setDomain] = useState('webdev');
+  const [page, setPage] = useState(3);
   const [domainData, setDomainData] = useState({});
   return (
     <>
       <main className="mt-1 mx-4 sm:mx-14 md:mx-28 gap-y-10 md:gap-y-14 flex justify-center flex-col">
+        {/* {userData}
+        {domain}
+        {domainData} */}
         <div className="flex max-w-screen-xl outline flex-col gap-16">
           <SubHero
             title="Recruitment"
