@@ -1,7 +1,6 @@
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import WedDev from "./DomainQuestion";
+
 const semesterOptions = [
   {
     id: 1,
@@ -68,9 +67,9 @@ const courseOptions = [
   },
 ];
 
-const Form = ({ setUserData, userData }) => {
+const Form = ({ setUserData, userData, setPage }) => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+
 
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -97,7 +96,7 @@ const Form = ({ setUserData, userData }) => {
 
       localStorage.setItem("rookie", JSON.stringify(userData));
       console.log(data);
-      router.push("/");
+      setPage(2)
     } catch (error) {
       console.log(error);
     } finally {
@@ -252,14 +251,15 @@ const Form = ({ setUserData, userData }) => {
         </p>
 
         <div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
-          <button
+          {/* <button
             type="reset"
+            onClick={()=>setUserData({})}
             className={`${
               loading ? "cursor-not-allowed bg-white/10" : "bg-white/5"
             } w-full p-2 uppercase font-semibold border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md`}
           >
             Reset
-          </button>
+          </button> */}
 
           <button
             type="submit"
@@ -268,7 +268,7 @@ const Form = ({ setUserData, userData }) => {
               loading
                 ? "cursor-not-allowed bg-secondary/90 border-secondary/90"
                 : " bg-secondary border-secondary "
-            } w-full border-[1px] rounded font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
+            } w-full border-[1px] rounded font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
           >
             {loading ? (
               <AiOutlineLoading3Quarters className="animate-spin ease-in-out" />
@@ -283,22 +283,3 @@ const Form = ({ setUserData, userData }) => {
 };
 
 export default Form;
-
-// export function DomainList() {
-//   return <></>;
-// }
-
-// export function AppdevForm() {
-//   return <></>;
-// }
-// export function WebdevForm() {
-//   return <></>;
-// }
-
-// export function Domain({ domain }) {
-//   if (domain === "webdev") {
-//     return <WebdevForm />;
-//   } else if (domain === "appdev") {
-//     return <AppdevForm />;
-//   }
-// }

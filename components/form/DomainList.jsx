@@ -1,4 +1,4 @@
-const DomainList = ({ domain, setPage, setDomain }) => {
+const DomainList = ({ setPage, setDomain }) => {
   const domains = [
     {
       domain: "Web Development",
@@ -86,6 +86,12 @@ const DomainList = ({ domain, setPage, setDomain }) => {
         "Design is the key to effective communication. It is in the designer's hand how people perceive about things around them. The design domain of the Nexus club aims to aesthetically communicate the ideas and information about the happenings and the events of the club.",
     },
   ];
+
+  const handleDomainChange = (e) => {
+    e.preventDefault();
+     setPage(3);
+  }
+
   return (
     <form className="flex text-white mt-10 w-full text-sm">
       <div className="flex flex-col gap-y-10 w-full">
@@ -121,6 +127,7 @@ const DomainList = ({ domain, setPage, setDomain }) => {
         <div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
           <button
             type="reset"
+            onClick={() => setDomain(null)}
             className="bg-white/5 w-full p-2 uppercase font-semibold border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
           >
             Reset
@@ -128,6 +135,7 @@ const DomainList = ({ domain, setPage, setDomain }) => {
 
           <button
             type="submit"
+          onClick={(e) => handleDomainChange(e)}
             className=" bg-secondary border-secondary w-full border-[1px] rounded font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
           >
             Register
