@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.radio-label:has(input[type="radio"]:checked, input[type="checkbox"]:checked) {
+  background-color: #006dfa;
+  color: #fff;
+  /* width: 33%; */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

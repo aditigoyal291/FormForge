@@ -1,0 +1,181 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Rookie {
+  id                String       @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  email             String       @unique
+  prn               String       @unique
+  phone             String       @unique
+  semester          Int
+  course            String
+  bio               String
+  registeredDomains String[]     @default([])
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+  webdev            Webdev? 
+  appdev            Appdev?
+  aiml              Aiml?
+  cp                Cp?
+  logistics         Logistics?
+  operation         Operation?
+  marketing         Marketing?
+  campaigning       Campaigning?
+  pr                Pr?
+  sponsor           Sponsor?
+  design            Design?
+  content           Content?
+  evm               Evm?
+}
+
+model Webdev {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Evm {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Logistics {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Marketing {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Content {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Appdev {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Aiml {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Cp {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Design {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Operation {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Campaigning {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Pr {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
+
+model Sponsor {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String
+  solution2 String
+  solution3 String
+  solution4 String
+
+  Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
+  rookieId String? @unique @db.ObjectId
+}
