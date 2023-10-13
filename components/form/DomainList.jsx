@@ -103,14 +103,15 @@ const DomainList = ({ setPage, setDomain }) => {
               key={domain.name}
               className="radio-label relative border-white/10 border-[1px]  hover:bg-white/20 font-medium hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded"
             >
-              <p className="absolute w-8 h-8 shadow-2xl rounded-full bg-secondary/90 -top-1 -right-1 border-white/40 border flex items-center justify-center text-xxs">
-                {domain.type === "tech" ? "T" : "NT"}
-              </p>
-
               <div className="flex flex-col gap-y-1 w-full p-2">
-                <h2 className="text-base font-semibold text-white">
-                  {domain.domain}
-                </h2>
+                <div className="flex gap-4">
+                  <h2 className="text-base font-semibold text-white">
+                    {domain.domain}
+                  </h2>
+                  <p className="absolute right-3  shadow-2xl px-3 rounded-lg bg-secondary/80 border-white/40 border flex items-center justify-center text-xxs">
+                    {domain.type === "tech" ? "Tech" : "Non-Tech"}
+                  </p>
+                </div>
                 <p className="text-xs leading-5">{domain.description}</p>
               </div>
               <input
