@@ -6,20 +6,21 @@ let maxDomainCount = 2;
 export async function POST(req, res) {
 	const repeatedDomain = (arr, domain) => {
 		if (arr.includes(domain)) {
-      
 			console.log('repeated domain');
 			return NextResponse.json(
 				{
-					message: `Already registered for ${domain}`,
+					message: `Already registered for `,
 					description:
 						'You cannot register for the same domain twice',
-					type: 'error',
+					type: 'warn',
 					code: 4,
 				},
 				{ status: 422 }
 			);
 		}
 	};
+
+  console.log('i am here')
 
 	try {
 		const body = await req.json();
@@ -28,7 +29,13 @@ export async function POST(req, res) {
 
 		if (!email || !prn || !domain) {
 			return NextResponse.json(
-				{ message: 'Missing values', code: 3 },
+				{
+					message: 'Missing values',
+					description:
+						'Email, PRN and Domain are compulsary it seems you have missing one or more of them',
+					type: 'error',
+					code: 3,
+				},
 				{ status: 422 }
 			);
 		}
@@ -49,7 +56,7 @@ export async function POST(req, res) {
 					code: 1,
 					message: 'PRN and Email does not match',
 					description: 'Check your PRN and Email once again',
-					status: 'error',
+					type: 'error',
 				},
 				{ status: 422 }
 			);
@@ -60,7 +67,7 @@ export async function POST(req, res) {
 				{
 					message: 'Maximum Submission for domain reached',
 					description: `You already registered for ${maxDomainCount} domains. You cannot register for more`,
-					status: 'error',
+					type: 'error',
 					code: 6,
 				},
 				{ status: 422 }
@@ -297,15 +304,13 @@ export async function POST(req, res) {
 			{ status: 200 }
 		);
 	} catch (error) {
-	
-
 		return NextResponse.json(
 			{
 				type: 'error',
 				message: error,
 				description: error.message,
-				status: 'error',
-        code: 8
+				type: 'error',
+				code: 8,
 			},
 			{ status: 500 }
 		);

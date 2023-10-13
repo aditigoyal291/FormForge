@@ -34,22 +34,20 @@ const Modal = ({
 				body: JSON.stringify(userData),
 			});
 			const data = await res.json();
-			if (data === null) {
-				console.log('user does not exist');
-				return;
-			}
-			const { name, email, prn, phone, semester, course, bio } =
-				data.existing;
-			setUserData({ name, email, prn, phone, semester, course, bio });
+			console.log(data)
+
 			setMessage({
 				display: true,
-				message: 'Login Successful',
-				description:
-					'Now you may continue to reigster for other domains',
-				type: 'success',
+				message: data.message,
+				description: data.description,
+				type: data.type,
 			});
-
 			if (data.code === 2) {
+				// console.log(data.existing);
+				const { name, email, prn, phone, semester, course, bio } =
+					data.existing;
+				setUserData({ name, email, prn, phone, semester, course, bio });
+
 				setTimeout(() => {
 					setModelIsOpen(false);
 					setPage(2);
@@ -58,10 +56,11 @@ const Modal = ({
 		} catch (error) {
 			setMessage({
 				display: true,
-				message: "PRN and Email doesn't match",
-				description: 'Check your email and prn once again',
-				type: 'warn',
+				message: error,
+				description: error.message,
+				type: 'error'
 			});
+			console.log(error);
 		} finally {
 			setLoading(false);
 			setTimeout(() => {
@@ -76,21 +75,20 @@ const Modal = ({
 	return (
 		<>
 			<div className="text-white fixed z-50 md:p-10 bg-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
-				<div className="relative w-full md:max-w-lg bg-shaded outline-white/10 backdrop-blur-2xl outline p-5 rounded justify-center flex flex-col gap-2">
+				<div className="relative w-full md:max-w-lg bg-shaded outline-white/10 backdrop-blur-2xl outline p-5 rounded justify-center flex flex-col gap-y-4">
 					<button
 						onClick={handleCrossClick}
 						className="absolute right-3 p-1 rounded top-3 hover:bg-slate-900/90 w-6 h-6 flex items-center justify-center"
 					>
 						<RxCross1 className="" />
 					</button>
-					<div className="my-5 relative">
+					<div className="relative">
 						<h1 className="text-lg font-semibold text-secondary">
 							Sign In
 						</h1>
 						<p className="text-xs">
 							Sign in will only work if you have registered for 1
 							domain
-							{/* <span className="font-mono bg-slate-800">name</span> */}
 						</p>
 					</div>
 					<Message
@@ -100,21 +98,7 @@ const Modal = ({
 					>
 						{message.description}
 					</Message>
-					{/* {message.display && (
-						<div
-							className={`${
-								message.type === 'success'
-									? 'border-teal-500 bg-teal-300/80 text-teal-900'
-									: message.type === 'warn'
-									? 'bg-yellow-200 border-yellow-600 text-yellow-950'
-									: 'bg-blue-300/80 border-blue-500 text-blue-950'
-							} border-[1px] text-xs p-2 rounded`}
-						>
-							<h2>{message.message}</h2>
-							<p className="text-xxs">{message.description}</p>
-						</div> 
-					)}
-						*/}
+			
 					<div className="rounded-md flex items-center justify-center  w-full">
 						<form
 							// action=""

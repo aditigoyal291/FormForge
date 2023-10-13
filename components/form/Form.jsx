@@ -108,7 +108,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 
 			setMessage({
 				display: true,
-				type: data.status,
+				type: data.type,
 				message: data.message,
 				description: data.description,
 			});
@@ -313,7 +313,14 @@ const Form = ({ setUserData, userData, setPage }) => {
 					</button>
 				</p>
 
-				<div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
+				<div className="mt-8 flex items-center justify-center flex-col-reverse sm:flex-row gap-2 md:gap-3">
+					<button
+						type="button"
+						onClick={() => setModelIsOpen(true)}
+						className="w-full p-2 rounded  font-medium tracking-wide text-sm px-3 py-1.5 flex items-center text-background bg-white justify-center outline outline-white/10"
+					>
+						Login
+					</button>
 					<button
 						type="submit"
 						disabled={loading}

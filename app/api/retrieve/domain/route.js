@@ -33,7 +33,7 @@ export async function POST(req, res) {
 				type: 'error',
 				message: error,
 				description: error.message,
-				status: 'error',
+				type: 'error',
 			},
 			{ status: 500 }
 		);

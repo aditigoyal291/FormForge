@@ -51,28 +51,17 @@ const DomainQuestion = ({
 			});
 			const data = await res.json();
 
-			// router.push('/');
-			// localStorage.setItem('rookie', JSON.stringify(domainData));
-			// console.log(data);
-
-			//   console.log({
-			// 	...domainData,
-			// 	domain: domain,
-			// 	email: userData.email.toLowerCase(),
-			// 	prn: userData.prn.toLowerCase(),
-			// });
-
-			// setPage(1);
-
 			setMessage({
 				display: true,
-				type: data.status,
+				type: data.type,
 				message: data.message,
 				description: data.description,
 			});
 
 			if (data.code === 2) {
-				setPage(2);
+				setTimeout(() => {
+					setPage(2);
+				}, 4000);
 			}
 		} catch (error) {
 			setMessage({
@@ -85,7 +74,7 @@ const DomainQuestion = ({
 			setLoading(false);
 			setTimeout(() => {
 				setMessage({ display: false });
-			}, 5000);
+			}, 4000);
 		}
 	};
 
@@ -160,7 +149,7 @@ const DomainQuestion = ({
 						<button
 							type="button"
 							onClick={() => setPage(2)}
-							className="flex rounded items-center justify-center border border-shaded hover:bg-shaded"
+							className="flex rounded items-center justify-center border border-shaded hover:bg-shaded h-9"
 						>
 							Back
 						</button>

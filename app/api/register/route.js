@@ -33,10 +33,10 @@ export async function POST(req, res) {
 					message: 'PRN and Email already exists',
 					description:
 						'You are already registered. Sign to chose your next prefered domain',
-					status: 'warn',
+					type: 'warn',
 					code: 1,
 				},
-				{ status: 402 }
+				{ status: 422 }
 			);
 		}
 
