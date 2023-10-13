@@ -17,6 +17,7 @@ export async function POST(req, res) {
   try {
     const body = await req.json();
     const { domain, email, prn } = body;
+    console.log(body)
 
     if (!email || !prn || !domain) {
       return NextResponse.json(

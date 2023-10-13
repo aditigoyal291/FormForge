@@ -12,3 +12,12 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+
+
+.main{
+  background:  url('./../public/sample-bg.jpg') no-repeat top center;
+}
+
+.gradient{
+  background-image:  radial-gradient(transparent 20%,  #040305 60%);
+}

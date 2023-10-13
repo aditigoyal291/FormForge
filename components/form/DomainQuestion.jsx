@@ -19,7 +19,6 @@ const DomainQuestion = ({
 }) => {
 	const handleChange = (e) => {
 		setDomainData({ ...domainData, [e.target.name]: e.target.value });
-		console.log(domainData);
 	};
 
 	const domainQuestions = questions.find(
@@ -38,17 +37,24 @@ const DomainQuestion = ({
 				body: JSON.stringify({
 					...domainData,
 					domain: domain,
-					email: userData.email?.toLowerCase(),
-					prn: userData.prn?.toUpperCase(),
+					email: userData.email.toLowerCase(),
+					prn: userData.prn.toLowerCase(),
 				}),
 			});
 			const data = await res.json();
 
-			router.push('/');
-
+			// router.push('/');
 			// localStorage.setItem('rookie', JSON.stringify(domainData));
-			console.log(data);
-			setPage(1);
+			// console.log(data);
+
+    //   console.log({
+		// 	...domainData,
+		// 	domain: domain,
+		// 	email: userData.email.toLowerCase(),
+		// 	prn: userData.prn.toLowerCase(),
+		// });
+      
+			// setPage(1);
 		} catch (error) {
 			console.log(error);
 		} finally {
