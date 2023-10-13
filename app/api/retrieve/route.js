@@ -8,12 +8,13 @@ export async function POST(req, res) {
     if (!email || !prn) {
       return NextResponse.json(
         { message: "Missing values", code: 3 },
-        { status: 402 }
+        { status: 422 }
       );
     }
 
     // console.log(email, prn);
 
+    console.log('email and prn is there')
     prisma.$connect();
 
     const existing = await prisma.rookie.findUnique({
@@ -21,9 +22,9 @@ export async function POST(req, res) {
         email,
         prn,
       },
-      include: {
-        domain: true,
-      },
+      // include: {
+      //   domain: true,
+      // },
     });
 
     console.log(existing);

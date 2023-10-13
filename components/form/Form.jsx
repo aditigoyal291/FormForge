@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import Modal from '../Modal';
 
 const semesterOptions = [
 	{
@@ -69,6 +70,7 @@ const courseOptions = [
 
 const Form = ({ setUserData, userData, setPage }) => {
 	const [loading, setLoading] = useState(false);
+	const [modelIsOpen, setModelIsOpen] = useState(false);
 
 	const handleChange = (e) => {
 		setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -95,7 +97,11 @@ const Form = ({ setUserData, userData, setPage }) => {
 
 			localStorage.setItem('rookie', JSON.stringify(userData));
 			console.log(data);
-			setPage(2);
+			if(data.code===2){
+				setPage(2)
+			} else {
+				console.log(2);
+			}
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -105,6 +111,15 @@ const Form = ({ setUserData, userData, setPage }) => {
 
 	return (
 		<>
+			{modelIsOpen && (
+				<Modal
+					setModelIsOpen={setModelIsOpen}
+					handleChange={handleChange}
+					setUserData={setUserData}
+					userData={userData}
+					setPage={setPage}
+				/>
+			)}
 			<form
 				onSubmit={(e) => handleRegistration(e)}
 				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
@@ -162,7 +177,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 							required
 							onChange={(e) => handleChange(e)}
 							autoCorrect="off"
-							placeholder="PES120[22/23]XXXXX"
+							placeholder="PES1202[2/3]XXXXX"
 							value={userData?.prn}
 							id="prn"
 							className="bg-white/5 p-2 outline-white/10 outline-offset-0 rounded uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
@@ -253,14 +268,18 @@ const Form = ({ setUserData, userData, setPage }) => {
 						onChange={(e) => handleChange(e)}
 						placeholder="Something about yourself"
 						id="bio"
-						className="bg-white/5 p-2 border-white/10 border-[1px]  rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+						className=" bg-white/5 p-2 border-white/10 border-[1px]  rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					/>
 				</label>
 
 				<p className="text-xxs font-medium before:content-['*']">
 					Already registered for one domain, no need to register again
 					just{' '}
-					<button className="text-secondary font-medium">
+					<button
+						type="button"
+						onClick={() => setModelIsOpen(true)}
+						className="text-secondary font-medium"
+					>
 						Choose another domain
 					</button>
 				</p>
