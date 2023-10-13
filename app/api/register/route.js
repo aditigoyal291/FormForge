@@ -52,6 +52,7 @@ export async function POST(req, res) {
 			},
 		});
 
+		console.log(newRegistration)
 		return NextResponse.json(
 			{
 				newRegistration,
@@ -67,7 +68,7 @@ export async function POST(req, res) {
 			{
 				type: 'error',
 				message: error,
-				description: error.message,
+				description: JSON.stringify(error.message),
 				status: 'error',
         code: 8
 			},

@@ -4,23 +4,20 @@ import { NextResponse } from 'next/server';
 let maxDomainCount = 2;
 
 export async function POST(req, res) {
-	const repeatedDomain = (arr, domain) => {
-		if (arr.includes(domain)) {
-			console.log('repeated domain');
-			return NextResponse.json(
-				{
-					message: `Already registered for `,
-					description:
-						'You cannot register for the same domain twice',
-					type: 'warn',
-					code: 4,
-				},
-				{ status: 422 }
-			);
-		}
-	};
-
-  console.log('i am here')
+	// const repeatedDomain = (arr, domain) => {
+	// 	if (arr.includes(domain)) {
+	// 		return NextResponse.json(
+	// 			{
+	// 				message: `Already registered for ${domain}`,
+	// 				description:
+	// 					'You cannot register for the same domain twice',
+	// 				type: 'warn',
+	// 				code: 4,
+	// 			},
+	// 			{ status: 422 }
+	// 		);
+	// 	}
+	// };
 
 	try {
 		const body = await req.json();
@@ -48,7 +45,7 @@ export async function POST(req, res) {
 			},
 		});
 
-		console.log(existing);
+		// console.log(existing);
 
 		if (existing === null) {
 			return NextResponse.json(
@@ -88,7 +85,7 @@ export async function POST(req, res) {
 			case 'webdev':
 				console.log('webdev');
 
-				repeatedDomain(existing.registeredDomains, 'webdev');
+				// repeatedDomain(existing.registeredDomains, 'webdev');
 
 				domainRegistration = await prisma.webdev.create({
 					data: {
@@ -104,7 +101,8 @@ export async function POST(req, res) {
 			case 'appdev':
 				console.log('appdev');
 
-				repeatedDomain(existing.registeredDomains, 'appdev');
+				// repeatedDomain(existing.registeredDomains, 'appdev');
+
 				console.log(solution1);
 
 				domainRegistration = await prisma.appdev.create({
@@ -120,7 +118,7 @@ export async function POST(req, res) {
 			case 'aiml':
 				console.log('aiml');
 
-				repeatedDomain(existing.registeredDomains, 'aiml');
+				// repeatedDomain(existing.registeredDomains, 'aiml');
 
 				domainRegistration = await prisma.aiml.create({
 					data: {
@@ -135,7 +133,11 @@ export async function POST(req, res) {
 			case 'cp':
 				console.log('cp');
 
-				repeatedDomain(existing.registeredDomains, 'cp');
+				// console.log(
+				// 	existing.registeredDomains,
+				// 	existing.registeredDomains.includes('cp')
+				// 	);
+				// 	repeatedDomain(existing.registeredDomains, 'cp');
 				domainRegistration = await prisma.cp.create({
 					data: {
 						solution1,
@@ -149,7 +151,7 @@ export async function POST(req, res) {
 			case 'design':
 				console.log('design');
 
-				repeatedDomain(existing.registeredDomains, 'design');
+				// repeatedDomain(existing.registeredDomains, 'design');
 				domainRegistration = await prisma.design.create({
 					data: {
 						solution1,
@@ -163,7 +165,7 @@ export async function POST(req, res) {
 			case 'operation':
 				console.log('operation');
 
-				repeatedDomain(existing.registeredDomains, 'operation');
+				// repeatedDomain(existing.registeredDomains, 'operation');
 				domainRegistration = await prisma.operation.create({
 					data: {
 						solution1,
@@ -177,7 +179,7 @@ export async function POST(req, res) {
 			case 'content':
 				console.log('content');
 
-				repeatedDomain(existing.registeredDomains, 'content');
+				// repeatedDomain(existing.registeredDomains, 'content');
 				domainRegistration = await prisma.content.create({
 					data: {
 						solution1,
@@ -191,7 +193,7 @@ export async function POST(req, res) {
 			case 'marketing':
 				console.log('marketing');
 
-				repeatedDomain(existing.registeredDomains, 'marketing');
+				// repeatedDomain(existing.registeredDomains, 'marketing');
 				domainRegistration = await prisma.marketing.create({
 					data: {
 						solution1,
@@ -205,7 +207,7 @@ export async function POST(req, res) {
 			case 'logistics':
 				console.log('logistics');
 
-				repeatedDomain(existing.registeredDomains, 'logistics');
+				// repeatedDomain(existing.registeredDomains, 'logistics');
 				domainRegistration = await prisma.logistics.create({
 					data: {
 						solution1,
@@ -220,7 +222,7 @@ export async function POST(req, res) {
 			case 'evm':
 				console.log('evm');
 
-				repeatedDomain(existing.registeredDomains, 'evm');
+				// repeatedDomain(existing.registeredDomains, 'evm');
 				domainRegistration = await prisma.evm.create({
 					data: {
 						solution1,
@@ -235,7 +237,7 @@ export async function POST(req, res) {
 			case 'campaigning':
 				console.log('campaigning');
 
-				repeatedDomain(existing.registeredDomains, 'campaigning');
+				// repeatedDomain(existing.registeredDomains, 'campaigning');
 				domainRegistration = await prisma.campaigning.create({
 					data: {
 						solution1,
@@ -249,7 +251,7 @@ export async function POST(req, res) {
 			case 'sponsor':
 				console.log('sponsor');
 
-				repeatedDomain(existing.registeredDomains, 'sponsor');
+				// repeatedDomain(existing.registeredDomains, 'sponsor');
 				domainRegistration = await prisma.sponsor.create({
 					data: {
 						solution1,
@@ -263,7 +265,7 @@ export async function POST(req, res) {
 			case 'pr':
 				console.log('pr');
 
-				repeatedDomain(existing.registeredDomains, 'pr');
+				// repeatedDomain(existing.registeredDomains, 'pr');
 				domainRegistration = await prisma.pr.create({
 					data: {
 						solution1,
@@ -306,9 +308,8 @@ export async function POST(req, res) {
 	} catch (error) {
 		return NextResponse.json(
 			{
-				type: 'error',
-				message: error,
-				description: error.message,
+				message: `Already registered for this domain`,
+				description: 'You cannot register for the same domain twice',
 				type: 'error',
 				code: 8,
 			},

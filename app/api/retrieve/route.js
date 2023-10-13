@@ -31,11 +31,12 @@ export async function POST(req, res) {
 		console.log(existing);
 
 		if (existing === null) {
-      console.log('i am here')
+			console.log('i am here');
 			return NextResponse.json(
 				{
-					message: 'User not registered',
-					description: 'You have to register first before login',
+					message: 'User not registered or wrong credentials',
+					description:
+						'You have to register first before login or check your credentials',
 					type: 'error',
 					code: 7,
 				},
@@ -66,7 +67,7 @@ export async function POST(req, res) {
 			{
 				type: 'error',
 				message: error,
-				description: error.message,
+				description: JSON.stringify(error.message),
 				type: 'error',
 				code: 8,
 			},
@@ -103,7 +104,7 @@ export async function GET(req, res) {
 			{
 				type: 'error',
 				message: error,
-				description: error.message,
+				description: JSON.stringify(error.message),
 				code: 8,
 			},
 			{ status: 500 }

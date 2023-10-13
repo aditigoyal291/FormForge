@@ -32,7 +32,7 @@ export async function POST(req, res) {
 			{
 				type: 'error',
 				message: error,
-				description: error.message,
+				description: JSON.stringify(error.message),
 				type: 'error',
 			},
 			{ status: 500 }

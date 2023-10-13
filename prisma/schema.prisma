@@ -43,6 +43,7 @@ model Webdev {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -54,6 +55,7 @@ model Evm {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -65,6 +67,7 @@ model Logistics {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -76,6 +79,7 @@ model Marketing {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -87,6 +91,7 @@ model Content {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -98,6 +103,7 @@ model Appdev {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -109,6 +115,7 @@ model Aiml {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -120,6 +127,7 @@ model Cp {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -131,6 +139,7 @@ model Design {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -142,6 +151,7 @@ model Operation {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -153,6 +163,7 @@ model Campaigning {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -164,6 +175,7 @@ model Pr {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
@@ -175,6 +187,7 @@ model Sponsor {
   solution2 String
   solution3 String
   solution4 String
+  selection String @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId

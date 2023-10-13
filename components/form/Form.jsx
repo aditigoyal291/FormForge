@@ -121,7 +121,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 			setMessage({
 				display: true,
 				message: error,
-				description: error.message,
+				description: JSON.stringify(error.message),
 				type: 'error',
 			});
 		} finally {
@@ -144,14 +144,6 @@ const Form = ({ setUserData, userData, setPage }) => {
 				onSubmit={(e) => handleRegistration(e)}
 				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
 			>
-				<Message
-					type={message.type}
-					message={message.message}
-					display={message.display}
-				>
-					{message.description}
-				</Message>
-
 				<label
 					htmlFor="name"
 					className="flex flex-col gap-y-1 w-full "
@@ -313,7 +305,15 @@ const Form = ({ setUserData, userData, setPage }) => {
 					</button>
 				</p>
 
-				<div className="mt-8 flex items-center justify-center flex-col-reverse sm:flex-row gap-2 md:gap-3">
+				<Message
+					type={message.type}
+					message={message.message}
+					display={message.display}
+				>
+					{message.description}
+				</Message>
+
+				<div className="mt-8 flex items-center justify-center flex-col sm:flex-row gap-2 md:gap-3">
 					<button
 						type="button"
 						onClick={() => setModelIsOpen(true)}

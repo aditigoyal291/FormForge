@@ -51,7 +51,7 @@ const Modal = ({
 				setTimeout(() => {
 					setModelIsOpen(false);
 					setPage(2);
-				}, 4000);
+				}, 3000);
 			}
 		} catch (error) {
 			setMessage({
@@ -65,7 +65,7 @@ const Modal = ({
 			setLoading(false);
 			setTimeout(() => {
 				setMessage({ display: false });
-			}, 4000);
+			}, 3000);
 		}
 	}
 
@@ -167,7 +167,7 @@ const Modal = ({
 									{loading ? (
 										<AiOutlineLoading3Quarters className="animate-spin ease-in-out" />
 									) : (
-										'Sign In'
+										'Log In'
 									)}
 								</button>
 							</div>

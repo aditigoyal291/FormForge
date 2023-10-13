@@ -50,6 +50,7 @@ const DomainQuestion = ({
 				}),
 			});
 			const data = await res.json();
+			console.log(data)
 
 			setMessage({
 				display: true,
@@ -66,9 +67,9 @@ const DomainQuestion = ({
 		} catch (error) {
 			setMessage({
 				display: true,
-				message: "PRN and Email doesn't match",
-				description: 'Check your email and prn once again',
-				type: 'warn',
+				message: 'Repeated domain selection',
+				description: 'You cannot register for the same domain again',
+				type: 'error',
 			});
 		} finally {
 			setLoading(false);
@@ -89,14 +90,6 @@ const DomainQuestion = ({
 					<h2 className="text-2xl font-bold text-primary">
 						{domainQuestions.domainFullName}
 					</h2>
-
-					<Message
-						type={message.type}
-						message={message.message}
-						display={message.display}
-					>
-						{message.description}
-					</Message>
 
 					{domainQuestions.questions.map((question) => {
 						const { inputType } = question;
@@ -145,6 +138,15 @@ const DomainQuestion = ({
 							return <SelectInput key={question.id} />;
 						}
 					})}
+
+					<Message
+						type={message.type}
+						message={message.message}
+						display={message.display}
+					>
+						{message.description}
+					</Message>
+					
 					<div className="grid grid-cols-2 gap-2">
 						<button
 							type="button"
