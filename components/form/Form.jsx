@@ -272,17 +272,12 @@ const Form = ({ setUserData, userData, setPage }) => {
 					/>
 				</label>
 
-				<p className="text-xxs font-medium before:content-['*']">
-					Already registered for one domain, no need to register again
-					just{' '}
-					<button
-						type="button"
-						onClick={() => setModelIsOpen(true)}
-						className="text-secondary font-medium"
-					>
-						Choose another domain
-					</button>
-				</p>
+        <p className="text-xs font-medium before:content-['*']">
+          Already registered for one domain, no need to register again just{" "}
+          <button className="text-secondary font-medium">
+            Choose another domain
+          </button>
+        </p>
 
 				<div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
 					{/* <button

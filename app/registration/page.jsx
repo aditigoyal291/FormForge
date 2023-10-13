@@ -1,9 +1,10 @@
-'use client';
-import SubHero from '@/components/SubHero';
-import Form from '@/components/form/Form';
-import React, { useState } from 'react';
-import DomainList from '@/components/form/DomainList';
-import DomainQuestion from '@/components/form/DomainQuestion';
+"use client";
+import SubHero from "@/components/SubHero";
+import Form from "@/components/form/Form";
+import React, { useState } from "react";
+import DomainList from "@/components/form/DomainList";
+import DomainQuestion from "@/components/form/DomainQuestion";
+import Modal from "@/components/form/Modal";
 
 const RegistrationPage = () => {
 	const [userData, setUserData] = useState({});

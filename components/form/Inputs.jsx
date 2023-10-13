@@ -112,6 +112,7 @@ export function EmailInput({
 export function CheckboxInput({
   handleChange,
   name,
+  
   question,
   id,
   options,
