@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Modal from '../Modal';
+import Message from '../Message';
 
 const semesterOptions = [
 	{
@@ -71,6 +72,12 @@ const courseOptions = [
 const Form = ({ setUserData, userData, setPage }) => {
 	const [loading, setLoading] = useState(false);
 	const [modelIsOpen, setModelIsOpen] = useState(false);
+	const [message, setMessage] = useState({
+		display: false,
+		message: '',
+		description: '',
+		type: '',
+	});
 
 	const handleChange = (e) => {
 		setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -97,33 +104,45 @@ const Form = ({ setUserData, userData, setPage }) => {
 
 			localStorage.setItem('rookie', JSON.stringify(userData));
 			console.log(data);
-			if(data.code===2){
-				setPage(2)
-			} else {
-				console.log(2);
+
+			setMessage({
+				display: true,
+				type: data.status,
+				message: data.message,
+				description: data.description,
+			});
+
+			if (data.code === 2) {
+				setPage(2);
 			}
 		} catch (error) {
 			console.log(error);
+			setMessage({
+				display: true,
+				message: error,
+				description: error.message,
+				type: 'error',
+			});
 		} finally {
 			setLoading(false);
+			setTimeout(() => setMessage({ display: false }), 5000);
 		}
 	};
 
 	return (
 		<>
-			{modelIsOpen && (
-				<Modal
-					setModelIsOpen={setModelIsOpen}
-					handleChange={handleChange}
-					setUserData={setUserData}
-					userData={userData}
-					setPage={setPage}
-				/>
-			)}
 			<form
 				onSubmit={(e) => handleRegistration(e)}
 				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
 			>
+				<Message
+					type={message.type}
+					message={message.message}
+					display={message.display}
+				>
+					{message.description}
+				</Message>
+
 				<label
 					htmlFor="name"
 					className="flex flex-col gap-y-1 w-full "
@@ -179,6 +198,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 							autoCorrect="off"
 							placeholder="PES1202[2/3]XXXXX"
 							value={userData?.prn}
+							pattern="[pes/PES]1202[2/3][0-9]{4}"
 							id="prn"
 							className="bg-white/5 p-2 outline-white/10 outline-offset-0 rounded uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 							maxLength={13}
@@ -272,24 +292,19 @@ const Form = ({ setUserData, userData, setPage }) => {
 					/>
 				</label>
 
-        <p className="text-xs font-medium before:content-['*']">
-          Already registered for one domain, no need to register again just{" "}
-          <button className="text-secondary font-medium">
-            Choose another domain
-          </button>
-        </p>
+				<p className="text-xs font-medium before:content-['*']">
+					Already registered for one domain, no need to register again
+					just{' '}
+					<button
+						type="button"
+						onClick={() => setModelIsOpen(true)}
+						className="text-secondary font-medium"
+					>
+						Choose another domain
+					</button>
+				</p>
 
 				<div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
-					{/* <button
-            type="reset"
-            onClick={()=>setUserData({})}
-            className={`${
-              loading ? "cursor-not-allowed bg-white/10" : "bg-white/5"
-            } w-full p-2 uppercase font-semibold border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md`}
-          >
-            Reset
-          </button> */}
-
 					<button
 						type="submit"
 						disabled={loading}

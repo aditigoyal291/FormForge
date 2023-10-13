@@ -23,7 +23,15 @@ export async function POST(req, res) {
 
     return NextResponse.json({ domainRegistration, code: 2 }, { status: 200 });
   } catch (err) {
-    console.log(err);
+   return NextResponse.json(
+		{
+			type: 'error',
+			message: error,
+			description: error.message,
+			status: 'error',
+		},
+		{ status: 500 }
+   );
     return NextResponse.json({ err: err.message }, { status: 500 });
   } finally {
     await prisma.$disconnect();

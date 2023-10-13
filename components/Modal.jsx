@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
+import Message from './Message';
 // import Form from "./Form";
 // import { Button } from "../Button";
 const Modal = ({
@@ -12,10 +13,10 @@ const Modal = ({
 }) => {
 	const [loading, setLoading] = useState(false);
 	const [message, setMessage] = useState({
-		display: true,
-		message: 'Message',
-		description: 'description',
-		type: 'warn',
+		display: false,
+		message: '',
+		description: '',
+		type: '',
 	});
 
 	function handleCrossClick() {
@@ -54,14 +55,14 @@ const Modal = ({
 		} catch (error) {
 			setMessage({
 				display: true,
-				message: 'PRN and Email doesn\'t match',
-				description:
-					'Check your email and prn once again',
+				message: "PRN and Email doesn't match",
+				description: 'Check your email and prn once again',
 				type: 'warn',
 			});
 			setTimeout(() => {
 				setMessage({ display: false });
 				setModelIsOpen(false);
+
 			}, 3000);
 		} finally {
 			setLoading(false);
@@ -88,7 +89,14 @@ const Modal = ({
 							{/* <span className="font-mono bg-slate-800">name</span> */}
 						</p>
 					</div>
-					{message.display && (
+					<Message
+						type={message.type}
+						message={message.message}
+						display={message.display}
+					>
+						{message.description}
+					</Message>
+					{/* {message.display && (
 						<div
 							className={`${
 								message.type === 'success'
@@ -100,8 +108,9 @@ const Modal = ({
 						>
 							<h2>{message.message}</h2>
 							<p className="text-xxs">{message.description}</p>
-						</div>
+						</div> 
 					)}
+						*/}
 					<div className="rounded-md flex items-center justify-center  w-full">
 						<form
 							// action=""

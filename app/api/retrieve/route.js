@@ -60,7 +60,15 @@ export async function GET(req, res) {
     });
     return NextResponse.json(allRegistrations, { status: 200 });
   } catch (error) {
-    console.log(error);
+    return NextResponse.json(
+		{
+			type: 'error',
+			message: error,
+			description: error.message,
+			status: 'error',
+		},
+		{ status: 500 }
+	);
     return NextResponse.json({ error: error.message }, { status: 500 });
   } finally {
     prisma.$disconnect();
