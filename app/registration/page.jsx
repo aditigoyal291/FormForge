@@ -1,5 +1,5 @@
 "use client";
-import SubHero from "@/components/SubHero";
+import SubHero from "@/components/Subhero";
 import Form from "@/components/form/Form";
 import React, { useState } from "react";
 import DomainList from "@/components/form/DomainList";

@@ -89,8 +89,8 @@ const DomainList = ({ setPage, setDomain }) => {
 
   const handleDomainChange = (e) => {
     e.preventDefault();
-     setPage(3);
-  }
+    setPage(3);
+  };
 
   return (
     <form className="flex text-white mt-10 w-full text-sm">
@@ -135,7 +135,7 @@ const DomainList = ({ setPage, setDomain }) => {
 
           <button
             type="submit"
-          onClick={(e) => handleDomainChange(e)}
+            onClick={(e) => handleDomainChange(e)}
             className=" bg-secondary border-secondary w-full border-[1px] rounded font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
           >
             Register
