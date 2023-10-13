@@ -1,20 +1,18 @@
-"use client";
-import SubHero from "@/components/SubHero";
-import Form from "@/components/form/Form";
-import React, { useState } from "react";
-import DomainList from "@/components/form/DomainList";
-import DomainQuestion from "@/components/form/DomainQuestion";
-import Modal from "@/components/form/Modal";
+'use client';
+import SubHero from '@/components/SubHero';
+import Form from '@/components/form/Form';
+import React, { useState } from 'react';
+import DomainList from '@/components/form/DomainList';
+import DomainQuestion from '@/components/form/DomainQuestion';
 
 const RegistrationPage = () => {
   const [userData, setUserData] = useState({});
-  const [domain, setDomain] = useState("webdev");
+  const [domain, setDomain] = useState(null);
   const [page, setPage] = useState(1);
   const [domainData, setDomainData] = useState({});
   return (
     <>
-      <main className="mt-1 mx-4 sm:mx-14 md:mx-28 gap-y-10 md:gap-y-14 flex  flex-col">
-        <Modal />
+      <main className="mt-1 mx-4 sm:mx-14 md:mx-28 gap-y-10 md:gap-y-14 flex justify-center flex-col">
         {/* {userData}
         {domain}
         {domainData} */}
@@ -25,6 +23,11 @@ const RegistrationPage = () => {
           >
             Some message
           </SubHero>
+          <p className="text-white">
+						{JSON.stringify(userData)}
+						{JSON.stringify(domain)}
+						{JSON.stringify(domainData)}
+					</p>
           <div className="flex justify-center items-center md:w-[60vw] md:max-w-3xl w-full mx-auto">
             <div className="w-full border border-white/10 rounded-xl flex sm:p-10 p-4 justify-center">
               {page === 1 ? (

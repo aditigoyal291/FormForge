@@ -73,6 +73,42 @@ export function RadioInput({
   );
 }
 
+
+export function EmailInput({
+	handleChange,
+	name,
+	question,
+	id,
+	placeholder,
+	required,
+}) {
+	return (
+		<label
+			htmlFor={name}
+			className="flex flex-col gap-y-1 w-full"
+		>
+			<span
+				className={`${
+					required && 'after:content-[' * '] after:text-secondary'
+				} text-slate-100 font-medium text-xs`}
+			>
+				{question}
+			</span>
+			<div className="flex flex-col gap-4  w-full">
+				<input
+					type="text"
+					required={required}
+					onChange={(e) => handleChange(e)}
+					placeholder={placeholder}
+					className="bg-white/5 p-2 border-white/10 border-[1px]  rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					id={name}
+					name={name}
+				/>
+			</div>
+		</label>
+	);
+}
+
 export function CheckboxInput({
   handleChange,
   name,
@@ -182,6 +218,40 @@ export function TextAreaInput({
       </div>
     </label>
   );
+}
+
+export function TelInput({
+	handleChange,
+	name,
+	question,
+	id,
+	required,
+	placeholder,
+	pattern,
+}) {
+	return (
+		<label
+			htmlFor="phone"
+			className="flex flex-col gap-y-1 w-full"
+		>
+			<span className=" text-white/90 after:content-['*'] after:text-secondary font-medium">
+				{question}
+			</span>
+			<input
+				type="tel"
+				id={name}
+				required={required}
+				onChange={(e) => handleChange(e)}
+				name="phone"
+				// value={userData?.phone}
+				pattern={pattern}
+				minLength={10}
+				maxLength={10}
+				placeholder={placeholder}
+				className="bg-white/5 p-2 border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+			/>
+		</label>
+	);
 }
 
 export function SelectInput() {
