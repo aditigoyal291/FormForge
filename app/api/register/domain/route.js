@@ -6,10 +6,17 @@ let maxDomainCount = 2;
 export async function POST(req, res) {
 	const repeatedDomain = (arr, domain) => {
 		if (arr.includes(domain)) {
+      
 			console.log('repeated domain');
 			return NextResponse.json(
-				{ message: `Already registered for ${domain}`, code: 4 },
-				{ status: 402 }
+				{
+					message: `Already registered for ${domain}`,
+					description:
+						'You cannot register for the same domain twice',
+					type: 'error',
+					code: 4,
+				},
+				{ status: 422 }
 			);
 		}
 	};
@@ -279,9 +286,18 @@ export async function POST(req, res) {
 			},
 		});
 
-		return NextResponse.json({ updatedRookie, code: 2 }, { status: 200 });
+		return NextResponse.json(
+			{
+				updatedRookie,
+				type: 'success',
+				message: 'Registration Accepted',
+				description: `you are registerd for ${domain}`,
+				code: 2,
+			},
+			{ status: 200 }
+		);
 	} catch (error) {
-		console.log('error');
+	
 
 		return NextResponse.json(
 			{
@@ -289,6 +305,7 @@ export async function POST(req, res) {
 				message: error,
 				description: error.message,
 				status: 'error',
+        code: 8
 			},
 			{ status: 500 }
 		);

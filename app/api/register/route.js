@@ -69,10 +69,10 @@ export async function POST(req, res) {
 				message: error,
 				description: error.message,
 				status: 'error',
+        code: 8
 			},
 			{ status: 500 }
 		);
-		return NextResponse.json({ status: 500 });
 	} finally {
 		prisma.$disconnect();
 	}

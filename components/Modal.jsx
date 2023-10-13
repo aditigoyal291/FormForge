@@ -10,6 +10,7 @@ const Modal = ({
 	setModelIsOpen,
 	handleChange,
 	setPage,
+	modelIsOpen,
 }) => {
 	const [loading, setLoading] = useState(false);
 	const [message, setMessage] = useState({
@@ -47,11 +48,13 @@ const Modal = ({
 					'Now you may continue to reigster for other domains',
 				type: 'success',
 			});
-			setTimeout(() => {
-				setMessage({ display: false });
-				setModelIsOpen(false);
-				setPage(2);
-			}, 3000);
+
+			if (data.code === 2) {
+				setTimeout(() => {
+					setModelIsOpen(false);
+					setPage(2);
+				}, 4000);
+			}
 		} catch (error) {
 			setMessage({
 				display: true,
@@ -59,16 +62,17 @@ const Modal = ({
 				description: 'Check your email and prn once again',
 				type: 'warn',
 			});
-			setTimeout(() => {
-				setMessage({ display: false });
-				setModelIsOpen(false);
-
-			}, 3000);
 		} finally {
 			setLoading(false);
+			setTimeout(() => {
+				setMessage({ display: false });
+			}, 4000);
 		}
 	}
 
+	if (!modelIsOpen) {
+		return null;
+	}
 	return (
 		<>
 			<div className="text-white fixed z-50 md:p-10 bg-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
@@ -172,15 +176,9 @@ const Modal = ({
 								/>
 							</label>
 							<div className="flex justify-between w-full gap-3 mt-5">
-								{/* <button
-									type="reset"
-									className=" bg-white/20 uppercase p-3 py-1.5 w-full rounded text-sm"
-								>
-									Reset
-								</button> */}
 								<button
 									type="submit"
-									className="flex justify-center items-center bg-secondary p-3 uppercase py-1.5 w-full rounded text-sm"
+									className="h-8 flex justify-center items-center bg-secondary p-3 uppercase py-1.5 w-full rounded text-sm"
 								>
 									{loading ? (
 										<AiOutlineLoading3Quarters className="animate-spin ease-in-out" />

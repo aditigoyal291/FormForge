@@ -9,10 +9,12 @@ import {
 } from './Inputs';
 import { questions } from './question';
 import { useRouter } from 'next/navigation';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import Message from '../Message';
 
 const DomainQuestion = ({
-	setPage, 
-  userData,
+	setPage,
+	userData,
 	domain,
 	setDomainData,
 	domainData,
@@ -26,6 +28,12 @@ const DomainQuestion = ({
 	);
 
 	const [loading, setLoading] = useState(false);
+	const [message, setMessage] = useState({
+		display: false,
+		message: '',
+		description: '',
+		type: '',
+	});
 	const router = useRouter();
 
 	const handleDomainSubmission = async (e) => {
@@ -47,18 +55,37 @@ const DomainQuestion = ({
 			// localStorage.setItem('rookie', JSON.stringify(domainData));
 			// console.log(data);
 
-    //   console.log({
-		// 	...domainData,
-		// 	domain: domain,
-		// 	email: userData.email.toLowerCase(),
-		// 	prn: userData.prn.toLowerCase(),
-		// });
-      
+			//   console.log({
+			// 	...domainData,
+			// 	domain: domain,
+			// 	email: userData.email.toLowerCase(),
+			// 	prn: userData.prn.toLowerCase(),
+			// });
+
 			// setPage(1);
+
+			setMessage({
+				display: true,
+				type: data.status,
+				message: data.message,
+				description: data.description,
+			});
+
+			if (data.code === 2) {
+				setPage(2);
+			}
 		} catch (error) {
-			console.log(error);
+			setMessage({
+				display: true,
+				message: "PRN and Email doesn't match",
+				description: 'Check your email and prn once again',
+				type: 'warn',
+			});
 		} finally {
 			setLoading(false);
+			setTimeout(() => {
+				setMessage({ display: false });
+			}, 5000);
 		}
 	};
 
@@ -73,6 +100,15 @@ const DomainQuestion = ({
 					<h2 className="text-2xl font-bold text-primary">
 						{domainQuestions.domainFullName}
 					</h2>
+
+					<Message
+						type={message.type}
+						message={message.message}
+						display={message.display}
+					>
+						{message.description}
+					</Message>
+
 					{domainQuestions.questions.map((question) => {
 						const { inputType } = question;
 
@@ -128,14 +164,20 @@ const DomainQuestion = ({
 						>
 							Back
 						</button>
-
 						<button
+							type="submit"
 							disabled={loading}
 							className={`${
-								loading ? 'cursor-not-allowed' : ''
-							} p-2 rounded font-medium text-sm text-white bg-secondary`}
+								loading
+									? 'cursor-not-allowed bg-secondary/90 border-secondary/90'
+									: ' bg-secondary border-secondary '
+							} w-full border-[1px] rounded font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
 						>
-							{loading ? 'Loading...' : 'Submit'}
+							{loading ? (
+								<AiOutlineLoading3Quarters className="animate-spin ease-in-out" />
+							) : (
+								'Register'
+							)}
 						</button>
 					</div>
 				</form>

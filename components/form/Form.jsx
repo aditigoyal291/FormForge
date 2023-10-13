@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import Modal from '../Modal';
+// import Modal from '../Modal';
 import Message from '../Message';
+import Modal from '../Modal';
 
 const semesterOptions = [
 	{
@@ -113,7 +114,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 			});
 
 			if (data.code === 2) {
-				setPage(2);
+				setTimeout(() => setPage(2), 5000);
 			}
 		} catch (error) {
 			console.log(error);
@@ -131,6 +132,14 @@ const Form = ({ setUserData, userData, setPage }) => {
 
 	return (
 		<>
+			<Modal
+				setUserData={setUserData}
+				userData={userData}
+				setModelIsOpen={setModelIsOpen}
+				handleChange={handleChange}
+				setPage={setPage}
+				modelIsOpen={modelIsOpen}
+			/>
 			<form
 				onSubmit={(e) => handleRegistration(e)}
 				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
