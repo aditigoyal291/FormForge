@@ -76,6 +76,7 @@ export function RadioInput({
 export function CheckboxInput({
   handleChange,
   name,
+  
   question,
   id,
   options,

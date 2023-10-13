@@ -4,15 +4,17 @@ import Form from "@/components/form/Form";
 import React, { useState } from "react";
 import DomainList from "@/components/form/DomainList";
 import DomainQuestion from "@/components/form/DomainQuestion";
+import Modal from "@/components/form/Modal";
 
 const RegistrationPage = () => {
   const [userData, setUserData] = useState({});
-  const [domain, setDomain] = useState('webdev');
-  const [page, setPage] = useState(3);
+  const [domain, setDomain] = useState("webdev");
+  const [page, setPage] = useState(1);
   const [domainData, setDomainData] = useState({});
   return (
     <>
-      <main className="mt-1 mx-4 sm:mx-14 md:mx-28 gap-y-10 md:gap-y-14 flex justify-center flex-col">
+      <main className="mt-1 mx-4 sm:mx-14 md:mx-28 gap-y-10 md:gap-y-14 flex  flex-col">
+        <Modal />
         {/* {userData}
         {domain}
         {domainData} */}

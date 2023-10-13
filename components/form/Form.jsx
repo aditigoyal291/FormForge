@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import Modal from "./Modal";
 import WedDev from "./DomainQuestion";
 const semesterOptions = [
   {
@@ -246,7 +247,7 @@ const Form = ({ setUserData, userData }) => {
 
         <p className="text-xs font-medium before:content-['*']">
           Already registered for one domain, no need to register again just{" "}
-          <button className="text-secondary font-medium">
+          <button className="text-secondary font-medium ">
             Choose another domain
           </button>
         </p>
