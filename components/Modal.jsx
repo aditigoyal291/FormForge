@@ -52,7 +52,7 @@ const Modal = ({
 					semester,
 					course,
 					bio,
-					registeredDomains,
+					// registeredDomains,
 				} = data.existing;
 				setUserData({
 					name,
@@ -62,7 +62,7 @@ const Modal = ({
 					semester,
 					course,
 					bio,
-					registeredDomains,
+					// registeredDomains,
 				});
 
 				setTimeout(() => {

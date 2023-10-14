@@ -114,7 +114,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 			});
 			
 			if (data.code === 2) {
-				setUserData({...userData, registeredDomains: data.registeredDomains})
+				// setUserData({...userData, registeredDomains: data.registeredDomains})
 				setTimeout(() => setPage(2), 3000);
 			}
 		} catch (error) {
