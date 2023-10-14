@@ -32,7 +32,7 @@ export async function POST(req, res) {
 				{
 					message: 'PRN and Email already exists',
 					description:
-						'You are already registered. Sign to chose your next prefered domain',
+						'You are already registered. Login to choose your next prefered domain',
 					type: 'warn',
 					code: 1,
 				},
@@ -59,7 +59,7 @@ export async function POST(req, res) {
 				code: 2,
 				type: 'success',
 				message: 'User signin successfull',
-				description: 'Now proceed to chose your domain of interest',
+				description: 'Now proceed to choose your domain of interest',
 			},
 			{ status: 200 }
 		);

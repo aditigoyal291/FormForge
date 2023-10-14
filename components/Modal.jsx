@@ -51,7 +51,7 @@ const Modal = ({
 				setTimeout(() => {
 					setModelIsOpen(false);
 					setPage(2);
-				}, 3000);
+				}, 1500);
 			}
 		} catch (error) {
 			setMessage({
@@ -65,13 +65,14 @@ const Modal = ({
 			setLoading(false);
 			setTimeout(() => {
 				setMessage({ display: false });
-			}, 3000);
+			}, 1500);
 		}
 	}
 
 	if (!modelIsOpen) {
 		return null;
 	}
+	// const condition = false;
 	return (
 		<>
 			<div className="text-white fixed z-50 md:p-10 bg-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
@@ -84,11 +85,10 @@ const Modal = ({
 					</button>
 					<div className="relative">
 						<h1 className="text-lg font-semibold text-secondary">
-							Sign In
+							Log In
 						</h1>
 						<p className="text-xs">
-							Sign in will only work if you have registered for 1
-							domain
+							Login will only work if you are registered.
 						</p>
 					</div>
 					<Message
@@ -98,7 +98,7 @@ const Modal = ({
 					>
 						{message.description}
 					</Message>
-			
+
 					<div className="rounded-md flex items-center justify-center  w-full">
 						<form
 							// action=""
@@ -109,7 +109,7 @@ const Modal = ({
 								htmlFor="name"
 								className="space-y-1"
 							>
-								<span className="block after:content-['*'] after:text-secondary text-slate-100 font-medium text-xs">
+								<span className="block after:content-[\'*\'] after:text-secondary'} text-slate-100 font-medium text-xs">
 									Enter your Name
 								</span>
 								<input
@@ -117,6 +117,7 @@ const Modal = ({
 									type="text"
 									placeholder="John Doe"
 									className="w-full bg-white/5 focus:shadow focus:shadow-secondary p-2 outline-white/10 outline-offset-0 rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+									value={userData?.name}
 									id="name"
 									name="name"
 									required
@@ -127,7 +128,7 @@ const Modal = ({
 								htmlFor="email"
 								className="space-y-1"
 							>
-								<span className="block after:content-['*'] after:text-secondary text-slate-100 font-medium text-xs">
+								<span className="block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs">
 									Enter your Email
 								</span>
 								<input
@@ -138,6 +139,7 @@ const Modal = ({
 									id="email"
 									name="email"
 									required
+									value={userData?.email}
 									disabled={loading}
 								/>
 							</label>
@@ -145,7 +147,7 @@ const Modal = ({
 								htmlFor="prn"
 								className="space-y-1"
 							>
-								<span className="block after:content-['*'] after:text-secondary text-slate-100 font-medium text-xs">
+								<span className="block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs">
 									Enter your PRN
 								</span>
 								<input
@@ -155,6 +157,11 @@ const Modal = ({
 									className="w-full bg-white/5 focus:shadow focus:shadow-secondary p-2 outline-white/10 outline-offset-0 rounded uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 									id="prn"
 									name="prn"
+									autoCorrect="off"
+									value={userData?.prn}
+									pattern="[pes/PES]1202[2/3][0-9]{4}"
+									maxLength={13}
+									minLength={13}
 									disabled={loading}
 									required
 								/>

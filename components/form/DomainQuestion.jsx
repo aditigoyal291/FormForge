@@ -62,7 +62,7 @@ const DomainQuestion = ({
 			if (data.code === 2) {
 				setTimeout(() => {
 					setPage(2);
-				}, 4000);
+				}, 2000);
 			}
 		} catch (error) {
 			setMessage({
@@ -75,7 +75,7 @@ const DomainQuestion = ({
 			setLoading(false);
 			setTimeout(() => {
 				setMessage({ display: false });
-			}, 4000);
+			}, 2000);
 		}
 	};
 

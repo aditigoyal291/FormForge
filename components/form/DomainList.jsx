@@ -1,4 +1,4 @@
-const DomainList = ({ setPage, setDomain }) => {
+const DomainList = ({ setPage, setDomain, }) => {
   const domains = [
     {
       domain: "Web Development",

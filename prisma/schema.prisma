@@ -22,7 +22,7 @@ model Rookie {
   registeredDomains String[]     @default([])
   createdAt         DateTime     @default(now())
   updatedAt         DateTime     @updatedAt
-  webdev            Webdev? 
+  webdev            Webdev?
   appdev            Appdev?
   aiml              Aiml?
   cp                Cp?
@@ -38,156 +38,156 @@ model Rookie {
 }
 
 model Webdev {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Evm {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Logistics {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Marketing {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Content {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Appdev {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Aiml {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Cp {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Design {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Operation {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Campaigning {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Pr {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
 }
 
 model Sponsor {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  solution1 String
-  solution2 String
-  solution3 String
-  solution4 String
-  selection String @default("pending")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  solution1 String?
+  solution2 String?
+  solution3 String?
+  solution4 String?
+  selection String  @default("pending")
 
   Rookie   Rookie? @relation(fields: [rookieId], references: [id], onDelete: Cascade)
   rookieId String? @unique @db.ObjectId
