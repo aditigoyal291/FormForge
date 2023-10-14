@@ -32,7 +32,7 @@ export async function POST(req, res) {
 			},
 		});
 
-		// console.log(existing);
+		console.log(existing);
 
 		if (existing === null) {
 			return NextResponse.json(

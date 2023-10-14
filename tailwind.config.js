@@ -33,7 +33,7 @@ module.exports = {
 				"text-primary": "#E6E6E6",
 				"text-secondary": "#888888",
 				shaded: "#0A0A0A",
-				background: "#040305",
+				background: "hsl(var(--background))",
 			},
 			keyframes: {
 				animatedgradient: {

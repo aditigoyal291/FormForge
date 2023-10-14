@@ -93,61 +93,72 @@ const DomainList = ({ setPage, setDomain, }) => {
   };
 
   return (
-    <form className="flex text-white mt-10 w-full text-sm">
-      <div className="flex flex-col gap-y-10 w-full">
-        <span className="text-base">Enter the domain of your interest</span>
-        <div className="grid grid-cols-1 gap-4">
-          {domains.map((domain) => (
-            <>
-              <div className="radio-label flex p-1 rounded" key={domain.name}>
-                <label
-                  htmlFor={domain.name}
-                  className=" relative border-white/10 border-[1px]  hover:bg-white/20 font-medium hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-4 flex items-center justify-center rounded z-10 w-full"
-                >
-                  <div className="flex flex-col gap-y-1 w-full p-2">
-                    <div className="flex gap-4 ">
-                      <h2 className="text-base font-semibold text-white">
-                        {domain.domain}
-                      </h2>
-                      <p className=" left-40 top-1.5 shadow-2xl px-3 rounded-xl outline-none bg-gradient-to-r from-secondary via-blue-500 to-primary animate-gradient font-semibold flex items-center justify-center text-xxs bg-transparent ">
-                        {domain.type === "tech" ? "Tech" : "Non-Tech"}
-                      </p>
-                    </div>
-                    <p className="text-xs leading-5">{domain.description}</p>
-                  </div>
-                  <input
-                    type="radio"
-                    name="semester"
-                    onChange={(e) => setDomain(e.target.value)}
-                    id={domain.name}
-                    value={domain.name}
-                    className="box-content rounded-full bg-white/20 p-1 ring-white/20 bg-clip-padding outline-none ring-1 
+		<form className="flex text-white mt-10 w-full text-sm">
+			<div className="flex flex-col gap-y-10 w-full">
+				<span className="text-base">
+					Enter the domain of your interest
+				</span>
+				<div className="grid grid-cols-1 gap-4">
+					{domains.map((domain) => (
+						<>
+							<div
+								className="radio-label outline-offset-0 flex rounded focus:outline-secondary"
+								key={domain.name}
+							>
+								<label
+									htmlFor={domain.name}
+									className="relative border-white/10 border-[1px] hover:bg-white/20 font-medium hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-4 flex items-center justify-center rounded z-10 w-full"
+								>
+									<div className="flex flex-col gap-y-1 w-full p-2">
+										<div className="flex gap-4 ">
+											<h2 className="text-base font-semibold text-white">
+												{domain.domain}
+											</h2>
+											<p className="whitespace-nowrap shadow-2xl h-fit px-3  rounded-xl outline-none bg-gradient-to-r from-secondary via-blue-500 to-primary animate-gradient font-medium flex items-center justify-center text-xxs">
+												{domain.type === 'tech'
+													? 'Tech'
+													: 'Non-Tech'}
+											</p>
+										</div>
+										<p className="text-xs leading-5">
+											{domain.description}
+										</p>
+									</div>
+									<input
+										type="radio"
+										name="semester"
+										onChange={(e) =>
+											setDomain(e.target.value)
+										}
+										id={domain.name}
+										value={domain.name}
+										className="self-start box-content rounded-full bg-white/20 p-1 ring-white/20 bg-clip-padding outline-none ring-1 
                  checked:border-primary checked:border-[4px] checked:ring-primary w-2 appearance-none h-2 checked:bg-white/80 border-[5px] border-white/20"
-                  />
-                </label>
-              </div>
-            </>
-          ))}
-        </div>
-        <div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
-          <button
-            type="reset"
-            onClick={() => setDomain(null)}
-            className="bg-white/5 w-full p-2 uppercase font-semibold border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
-          >
-            Reset
-          </button>
+									/>
+								</label>
+							</div>
+						</>
+					))}
+				</div>
+				<div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
+					<button
+						type="reset"
+						onClick={() => setDomain(null)}
+						className="bg-white/5 w-full p-2 uppercase font-semibold border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					>
+						Reset
+					</button>
 
-          <button
-            type="submit"
-            onClick={(e) => handleDomainChange(e)}
-            className=" bg-secondary border-secondary w-full border-[1px] rounded font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
-          >
-            Register
-          </button>
-        </div>
-      </div>
-    </form>
+					<button
+						type="submit"
+						onClick={(e) => handleDomainChange(e)}
+						className=" bg-secondary border-secondary w-full border-[1px] rounded font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
+					>
+						Register
+					</button>
+				</div>
+			</div>
+		</form>
   );
 };
 
