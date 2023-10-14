@@ -299,9 +299,9 @@ const Form = ({ setUserData, userData, setPage }) => {
 					<button
 						type="button"
 						onClick={() => setModelIsOpen(true)}
-						className="text-secondary font-medium"
+						className="text-secondary font-semibold"
 					>
-						Choose another domain
+						Login
 					</button>
 				</p>
 
