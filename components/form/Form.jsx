@@ -137,7 +137,6 @@ const Form = ({ setUserData, userData, setPage }) => {
 							autoCorrect="off"
 							placeholder="PES1202[2/3]XXXXX"
 							value={userData?.prn}
-							// pattern="[pes/PES]1202[2/3][0-9]{4}"
 							id="prn"
 							className="bg-foreground/5 p-2 outline-foreground/10 outline-offset-0 rounded-md uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 							maxLength={13}
@@ -181,7 +180,6 @@ const Form = ({ setUserData, userData, setPage }) => {
                 name={option.name}
                 id={option.htmlForLabel}
                 className="hidden"
-                pattern="[1-4]{1}"
                 value={option.value}
               />
             </label>

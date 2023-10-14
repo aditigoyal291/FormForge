@@ -180,7 +180,6 @@ const Modal = ({
 									name="prn"
 									autoCorrect="off"
 									value={userData?.prn}
-									pattern="[pes/PES]1202[2/3][0-9]{4}"
 									maxLength={13}
 									minLength={13}
 									disabled={loading}
