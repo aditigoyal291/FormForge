@@ -24,7 +24,7 @@ export function TextInput({
 					required={required}
 					onChange={(e) => handleChange(e)}
 					placeholder={placeholder}
-					className="bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					className="bg-foreground/5 p-2 border-foreground/10 border-[1px] rounded-md lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					id={name}
 					name={name}
 				/>
@@ -112,7 +112,6 @@ export function EmailInput({
 export function CheckboxInput({
 	handleChange,
 	name,
-
 	question,
 	id,
 	options,

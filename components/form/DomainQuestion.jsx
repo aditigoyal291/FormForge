@@ -7,7 +7,7 @@ import {
 	TextAreaInput,
 	TextInput,
 } from './Inputs';
-import { questions } from './question';
+import { questions } from '../../constants/question';
 import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Message from '../Message';

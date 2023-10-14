@@ -1,74 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-// import Modal from '../Modal';
 import Message from "../Message";
 import Modal from "../Modal";
-
-const semesterOptions = [
-  {
-    id: 1,
-    htmlForLabel: "semester1",
-    value: 1,
-    name: "semester",
-  },
-  {
-    id: 2,
-    htmlForLabel: "semester2",
-    value: 2,
-    name: "semester",
-  },
-  {
-    id: 3,
-    htmlForLabel: "semester3",
-    value: 3,
-    name: "semester",
-  },
-  {
-    id: 4,
-    htmlForLabel: "semester4",
-    value: 4,
-    name: "semester",
-  },
-];
-
-const courseOptions = [
-  {
-    id: 1,
-    htmlForLabel: "course1",
-    value: "B.Tech CSE",
-    name: "course",
-  },
-  {
-    id: 2,
-    htmlForLabel: "course2",
-    value: "B.Tech EEE",
-    name: "course",
-  },
-  {
-    id: 3,
-    htmlForLabel: "course3",
-    value: "B.Tech ECE",
-    name: "course",
-  },
-  {
-    id: 4,
-    htmlForLabel: "course4",
-    value: "M.Tech",
-    name: "course",
-  },
-  {
-    id: 5,
-    htmlForLabel: "course5",
-    value: "B.Design",
-    name: "course",
-  },
-  {
-    id: 6,
-    htmlForLabel: "course6",
-    value: "Psychology",
-    name: "course",
-  },
-];
+import { courseOptions, semesterOptions } from "@/constants/baseQuestions";
 
 const Form = ({ setUserData, userData, setPage }) => {
   const [loading, setLoading] = useState(false);
@@ -203,7 +137,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 							autoCorrect="off"
 							placeholder="PES1202[2/3]XXXXX"
 							value={userData?.prn}
-							pattern="[pes/PES]1202[2/3][0-9]{4}"
+							// pattern="[pes/PES]1202[2/3][0-9]{4}"
 							id="prn"
 							className="bg-foreground/5 p-2 outline-foreground/10 outline-offset-0 rounded-md uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 							maxLength={13}

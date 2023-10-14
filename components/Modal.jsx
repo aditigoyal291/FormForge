@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import Message from './Message';
-// import Form from "./Form";
-// import { Button } from "../Button";
 const Modal = ({
 	setUserData,
 	userData,

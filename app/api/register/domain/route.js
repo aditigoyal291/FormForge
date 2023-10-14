@@ -1,7 +1,7 @@
+import { maxDomainCount } from '@/constants/baseQuestions';
 import prisma from '@/prisma';
 import { NextResponse } from 'next/server';
 
-let maxDomainCount = 2;
 
 export async function POST(req, res) {
 
