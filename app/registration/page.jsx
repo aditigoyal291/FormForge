@@ -8,7 +8,7 @@ import DomainQuestion from "@/components/form/DomainQuestion";
 const RegistrationPage = () => {
   const [userData, setUserData] = useState({});
   const [domain, setDomain] = useState(null);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const [domainData, setDomainData] = useState({});
   return (
     <>

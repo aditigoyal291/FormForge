@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 .radio-label:has(input[type="radio"]:checked, input[type="checkbox"]:checked) {
-  background-color: #006dfa;
+  border: 3px solid #006dfa;
+  border-radius: 8px;
   color: #fff;
   /* width: 33%; */
 }
@@ -13,11 +14,10 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-
-.main{
-  background:  url('./../public/sample-bg.jpg') no-repeat top center;
+.main {
+  background: url("./../public/sample-bg.jpg") no-repeat top center;
 }
 
-.gradient{
-  background-image:  radial-gradient(transparent 20%,  #040305 60%);
+.gradient {
+  background-image: radial-gradient(transparent 20%, #040305 60%);
 }
