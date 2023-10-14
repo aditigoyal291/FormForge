@@ -44,9 +44,26 @@ const Modal = ({
 			});
 			if (data.code === 2) {
 				// console.log(data.existing);
-				const { name, email, prn, phone, semester, course, bio } =
-					data.existing;
-				setUserData({ name, email, prn, phone, semester, course, bio });
+				const {
+					name,
+					email,
+					prn,
+					phone,
+					semester,
+					course,
+					bio,
+					registeredDomains,
+				} = data.existing;
+				setUserData({
+					name,
+					email,
+					prn,
+					phone,
+					semester,
+					course,
+					bio,
+					registeredDomains,
+				});
 
 				setTimeout(() => {
 					setModelIsOpen(false);
@@ -109,7 +126,7 @@ const Modal = ({
 								htmlFor="name"
 								className="space-y-1"
 							>
-								<span className="block after:content-[\'*\'] after:text-secondary'} text-slate-100 font-medium text-xs">
+								<span className={`block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs`}>
 									Enter your Name
 								</span>
 								<input
@@ -128,7 +145,7 @@ const Modal = ({
 								htmlFor="email"
 								className="space-y-1"
 							>
-								<span className="block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs">
+								<span className={`block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs`}>
 									Enter your Email
 								</span>
 								<input
@@ -147,7 +164,7 @@ const Modal = ({
 								htmlFor="prn"
 								className="space-y-1"
 							>
-								<span className="block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs">
+								<span className={`block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs`}>
 									Enter your PRN
 								</span>
 								<input

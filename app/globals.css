@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 .radio-label:has(input[type="radio"]:checked, input[type="checkbox"]:checked) {
-  border: 3px solid #006dfa;
-  border-radius: 8px;
+  outline: 3px solid #006dfa;
   color: #fff;
-  /* width: 33%; */
 }
 
 input[type="number"]::-webkit-inner-spin-button,

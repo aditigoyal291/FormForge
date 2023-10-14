@@ -112,8 +112,9 @@ const Form = ({ setUserData, userData, setPage }) => {
 				message: data.message,
 				description: data.description,
 			});
-
+			
 			if (data.code === 2) {
+				setUserData({...userData, registeredDomains: data.registeredDomains})
 				setTimeout(() => setPage(2), 3000);
 			}
 		} catch (error) {
@@ -144,6 +145,9 @@ const Form = ({ setUserData, userData, setPage }) => {
 				onSubmit={(e) => handleRegistration(e)}
 				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
 			>
+				<h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-blue-500 to-primary animate-gradient font-semibold tracking-tight">
+					NEXUS Registrations
+				</h1>
 				<label
 					htmlFor="name"
 					className="flex flex-col gap-y-1 w-full "
