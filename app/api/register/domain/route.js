@@ -4,20 +4,7 @@ import { NextResponse } from 'next/server';
 let maxDomainCount = 2;
 
 export async function POST(req, res) {
-	// const repeatedDomain = (arr, domain) => {
-	// 	if (arr.includes(domain)) {
-	// 		return NextResponse.json(
-	// 			{
-	// 				message: `Already registered for ${domain}`,
-	// 				description:
-	// 					'You cannot register for the same domain twice',
-	// 				type: 'warn',
-	// 				code: 4,
-	// 			},
-	// 			{ status: 422 }
-	// 		);
-	// 	}
-	// };
+
 
 	try {
 		const body = await req.json();
@@ -38,7 +25,7 @@ export async function POST(req, res) {
 		}
 		prisma.$connect();
 
-		const existing = await prisma.rookie.findFirst({
+		const existing = await prisma.rookie.findUnique({
 			where: {
 				email,
 				prn,

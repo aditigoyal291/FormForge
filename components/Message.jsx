@@ -30,7 +30,7 @@ const Message = ({ children, message, type, display }) => {
 					<AiFillInfoCircle className="w-5 h-5" />
 				)}
 				<div>
-					<h2 className="font-semibold  text-sm ">{message}</h2>
+					<h2 className="font-semibold text-sm ">{message}</h2>
 					<p className="text-xs font-medium">{children}</p>
 				</div>
 			</div>

@@ -42,10 +42,10 @@ export const questions = [
 			},
 			{
 				id: 3,
-				question: 'Advantages of NExt?',
+				question: 'Advantages of Next?',
 				name: 'solution3',
 				inputType: 'checkbox',
-				required: false,
+				
 				options: [
 					{
 						id: 1,

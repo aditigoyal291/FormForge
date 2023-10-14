@@ -114,7 +114,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 			});
 
 			if (data.code === 2) {
-				setTimeout(() => setPage(2), 5000);
+				setTimeout(() => setPage(2), 3000);
 			}
 		} catch (error) {
 			console.log(error);
@@ -126,7 +126,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 			});
 		} finally {
 			setLoading(false);
-			setTimeout(() => setMessage({ display: false }), 5000);
+			setTimeout(() => setMessage({ display: false }), 3000);
 		}
 	};
 
@@ -317,7 +317,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 					<button
 						type="button"
 						onClick={() => setModelIsOpen(true)}
-						className="w-full p-2 rounded  font-medium tracking-wide text-sm px-3 py-1.5 flex items-center text-background bg-white justify-center outline outline-white/10"
+						className="w-full p-2 rounded uppercase font-medium tracking-wide text-sm px-3 py-1.5 flex items-center text-background bg-white justify-center outline outline-white/10"
 					>
 						Login
 					</button>

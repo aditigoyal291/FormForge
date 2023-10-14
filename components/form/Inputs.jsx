@@ -12,7 +12,7 @@ export function TextInput({
     <label htmlFor={name} className="flex flex-col gap-y-1 w-full">
       <span
         className={`${
-          required && "after:content-["*"] after:text-secondary"
+          "after:content-["*"] after:text-secondary"
         } text-slate-100 font-medium text-xs`}
       >
         {question}

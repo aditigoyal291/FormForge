@@ -23,7 +23,6 @@ export async function POST(req, res) {
 
 		const existing = await prisma.rookie.findUnique({
 			where: {
-				email,
 				prn,
 			},
 		});
@@ -34,22 +33,36 @@ export async function POST(req, res) {
 			console.log('i am here');
 			return NextResponse.json(
 				{
-					message: 'User not registered or wrong credentials',
+					message: 'User not registered',
 					description:
-						'You have to register first before login or check your credentials',
+						'You have to register first before login',
 					type: 'error',
 					code: 7,
 				},
 				{ status: 401 }
 			);
 		}
-		console.log({
-			existing,
-			message: 'Login Successful',
-			description: 'Now you may continue to register for other domains',
-			type: 'success',
-			code: 2,
-		});
+		// console.log({
+		// 	existing,
+		// 	message: 'Login Successful',
+		// 	description: 'Now you may continue to register for other domains',
+		// 	type: 'success',
+		// 	code: 2,
+		// });
+
+		if (email !== existing.email || prn !== existing.prn) {
+			return NextResponse.json(
+				{
+					existing,
+					message: 'Credentials don\'t match',
+					description:
+						'Check your PRN and Email once again',
+					type: 'warn',
+					code: 6,
+				},
+				{ status: 401 }
+			);
+		}
 
 		return NextResponse.json(
 			{
