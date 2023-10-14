@@ -106,66 +106,66 @@ const Form = ({ setUserData, userData, setPage }) => {
       localStorage.setItem("rookie", JSON.stringify(userData));
       console.log(data);
 
-			setMessage({
-				display: true,
-				type: data.type,
-				message: data.message,
-				description: data.description,
-			});
-			
-			if (data.code === 2) {
-				// setUserData({...userData, registeredDomains: data.registeredDomains})
-				setTimeout(() => setPage(2), 3000);
-			}
-		} catch (error) {
-			console.log(error);
-			setMessage({
-				display: true,
-				message: error,
-				description: JSON.stringify(error.message),
-				type: 'error',
-			});
-		} finally {
-			setLoading(false);
-			setTimeout(() => setMessage({ display: false }), 3000);
-		}
-	};
+      setMessage({
+        display: true,
+        type: data.type,
+        message: data.message,
+        description: data.description,
+      });
 
-	return (
-		<>
-			<Modal
-				setUserData={setUserData}
-				userData={userData}
-				setModelIsOpen={setModelIsOpen}
-				handleChange={handleChange}
-				setPage={setPage}
-				modelIsOpen={modelIsOpen}
-			/>
-			<form
-				onSubmit={(e) => handleRegistration(e)}
-				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
-			>
-				<h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-blue-500 to-primary animate-gradient font-semibold tracking-tight">
-					NEXUS Registrations
-				</h1>
-				<label
-					htmlFor="name"
-					className="flex flex-col gap-y-1 w-full "
-				>
-					<span className="after:content-['*'] after:text-secondary text-slate-100 font-medium text-xs">
-						Enter name
-					</span>
-					<input
-						type="text"
-						name="name"
-						required
-						onChange={(e) => handleChange(e)}
-						placeholder="John Doe"
-						value={userData?.name}
-						id="name"
-						className="bg-white/5 focus:shadow focus:shadow-secondary p-2 outline-white/10 outline-offset-0 rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
-					/>
-				</label>
+      if (data.code === 2) {
+        // setUserData({...userData, registeredDomains: data.registeredDomains})
+        setTimeout(() => setPage(2), 3000);
+      }
+    } catch (error) {
+      console.log(error);
+      setMessage({
+        display: true,
+        message: error,
+        description: JSON.stringify(error.message),
+        type: "error",
+      });
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage({ display: false }), 3000);
+    }
+  };
+
+  return (
+    <>
+      <Modal
+        setUserData={setUserData}
+        userData={userData}
+        setModelIsOpen={setModelIsOpen}
+        handleChange={handleChange}
+        setPage={setPage}
+        modelIsOpen={modelIsOpen}
+      />
+      <form
+        onSubmit={(e) => handleRegistration(e)}
+        className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
+      >
+        <h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-blue-500 to-primary animate-gradient font-semibold tracking-tight">
+          NEXUS Registrations
+        </h1>
+        <label htmlFor="name" className="flex flex-col gap-y-1 w-full ">
+          <span className="after:content-['*'] after:text-secondary text-slate-100 font-medium text-xs">
+            Enter name
+          </span>
+          <input
+            type="text"
+            name="name"
+            required
+            onChange={(e) => handleChange(e)}
+            placeholder="John Doe"
+            value={userData?.name}
+            id="name"
+            className="bg-white/5 focus:shadow focus:shadow-secondary p-2 outline-white/10 outline-offset-0 rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+          />
+        </label>
+      </form>
+    </>
+  );
   return (
     <>
       <Modal
