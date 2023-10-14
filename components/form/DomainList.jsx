@@ -102,19 +102,19 @@ const DomainList = ({ setPage, setDomain, }) => {
 					{domains.map((domain) => (
 						<>
 							<div
-								className="radio-label outline-offset-0 flex rounded-md focus:outline-secondary"
+								className="radio-label outline-offset-0 flex rounded focus:outline-secondary"
 								key={domain.name}
 							>
 								<label
 									htmlFor={domain.name}
-									className="relative border-foreground/10 border-[1px] hover:bg-foreground/20 font-medium hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-4 flex items-center justify-center rounded-md z-10 w-full"
+									className="relative border-foreground/10 border-[1px] hover:bg-foreground/10 font-medium hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-4 flex items-center justify-center rounded z-10 w-full"
 								>
 									<div className="flex flex-col gap-y-1 w-full p-2">
 										<div className="flex gap-4 ">
 											<h2 className="text-base font-semibold text-foreground">
 												{domain.domain}
 											</h2>
-											<p className="foregroundspace-nowrap shadow-2xl h-fit px-3  rounded-md-xl outline-none bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-medium flex items-center justify-center text-xxs">
+											<p className="whitespace-nowrap shadow-2xl h-fit px-3  rounded-xl outline-none bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-medium flex items-center justify-center text-xxs">
 												{domain.type === 'tech'
 													? 'Tech'
 													: 'Non-Tech'}
@@ -132,7 +132,7 @@ const DomainList = ({ setPage, setDomain, }) => {
 										}
 										id={domain.name}
 										value={domain.name}
-										className="self-start box-content rounded-md-full bg-foreground/20 p-1 ring-foreground/20 bg-clip-padding outline-none ring-1 
+										className="self-start box-content rounded-full bg-foreground/20 p-1 ring-foreground/20 bg-clip-padding outline-none ring-1 
                  checked:border-primary checked:border-[4px] checked:ring-primary w-2 appearance-none h-2 checked:bg-foreground/80 border-[5px] border-foreground/20"
 									/>
 								</label>
@@ -144,7 +144,7 @@ const DomainList = ({ setPage, setDomain, }) => {
 					<button
 						type="reset"
 						onClick={() => setDomain(null)}
-						className="bg-foreground/5 w-full p-2 uppercase font-semibold border-foreground/10 border-[1px] rounded-md focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+						className="bg-foreground/5 w-full p-2 uppercase font-semibold border-foreground/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					>
 						Reset
 					</button>
@@ -152,7 +152,7 @@ const DomainList = ({ setPage, setDomain, }) => {
 					<button
 						type="submit"
 						onClick={(e) => handleDomainChange(e)}
-						className=" bg-secondary border-secondary w-full border-[1px] rounded-md font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
+						className=" bg-secondary border-secondary w-full border-[1px] rounded font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
 					>
 						Register
 					</button>

@@ -328,7 +328,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						className={`${
 							loading
 								? 'cursor-not-allowed bg-secondary/90 border-secondary/90'
-								: ' bg-secondary border-secondary '
+								: 'bg-secondary border-secondary '
 						} w-full border-[1px] rounded-md font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
 					>
 						{loading ? (

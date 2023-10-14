@@ -146,12 +146,12 @@ const DomainQuestion = ({
 					>
 						{message.description}
 					</Message>
-					
+
 					<div className="grid grid-cols-2 gap-2">
 						<button
 							type="button"
 							onClick={() => setPage(2)}
-							className="flex rounded-md items-center justify-center border border-shaded hover:bg-shaded h-9"
+							className="bg-foreground/5 w-full p-2 uppercase font-semibold border-foreground/10 border-[1px] rounded-md focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 						>
 							Back
 						</button>

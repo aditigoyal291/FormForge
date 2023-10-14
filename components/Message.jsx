@@ -18,7 +18,7 @@ const Message = ({ children, message, type, display }) => {
 						: type === 'error'
 						? 'bg-message-warn-foreground border-message-error-background text-message-error-background'
 						: 'bg-message-info-foreground border-message-info-background text-message-info-background'
-				} border-[1px] p-2 rounded-md flex items-start gap-x-2`}
+				} border-[1px] p-2 rounded-md flex items-start gap-x-2 animate-in fade-in zoom-in`}
 			>
 				{type === 'success' ? (
 					<AiFillCheckCircle className="w-5 h-5" />

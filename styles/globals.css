@@ -9,6 +9,8 @@
 		--foreground-muted: 214 32% 91%;
 		--primary: 203 100% 50%;
 		--secondary: 214 100% 49%;
+		/* --primary: 347, 77%, 50%; */
+		/* --secondary: 345, 83%, 41%; */
 
 		--radius: 0.3rem;
 		--message-warn-foreground: 26, 83%, 14%;
@@ -20,9 +22,9 @@
 		--message-error-foreground: 0, 75%, 15%;
 		--message-error-background: 0, 94%, 82%;
 
-    --modal-background: 0, 0%, 4%;
+		--modal-background: 0, 0%, 4%;
 
-    --input: 215 27.9% 16.9%;
+		--input: 215 27.9% 16.9%;
 	}
 
 	.radio-label:has(
