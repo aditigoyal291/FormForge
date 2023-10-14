@@ -81,11 +81,11 @@ const DomainQuestion = ({
 
 	return (
 		<>
-			<div className="text-white w-full">
+			<div className="text-foreground w-full">
 				<form
 					action=""
 					onSubmit={(e) => handleDomainSubmission(e)}
-					className="text-white text-sm my-5 w-full flex flex-col gap-y-6 accent-secondary"
+					className="text-foreground text-sm my-5 w-full flex flex-col gap-y-6 accent-secondary"
 				>
 					<h2 className="text-2xl font-bold text-primary">
 						{domainQuestions.domainFullName}
@@ -151,7 +151,7 @@ const DomainQuestion = ({
 						<button
 							type="button"
 							onClick={() => setPage(2)}
-							className="flex rounded items-center justify-center border border-shaded hover:bg-shaded h-9"
+							className="flex rounded-md items-center justify-center border border-shaded hover:bg-shaded h-9"
 						>
 							Back
 						</button>
@@ -162,7 +162,7 @@ const DomainQuestion = ({
 								loading
 									? 'cursor-not-allowed bg-secondary/90 border-secondary/90'
 									: ' bg-secondary border-secondary '
-							} w-full border-[1px] rounded font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
+							} w-full border-[1px] rounded-md font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
 						>
 							{loading ? (
 								<AiOutlineLoading3Quarters className="animate-spin ease-in-out" />

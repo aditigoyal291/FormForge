@@ -112,7 +112,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 				message: data.message,
 				description: data.description,
 			});
-			
+
 			if (data.code === 2) {
 				// setUserData({...userData, registeredDomains: data.registeredDomains})
 				setTimeout(() => setPage(2), 3000);
@@ -123,7 +123,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 				display: true,
 				message: error,
 				description: JSON.stringify(error.message),
-				type: 'error',
+				type: 'success',
 			});
 		} finally {
 			setLoading(false);
@@ -143,16 +143,16 @@ const Form = ({ setUserData, userData, setPage }) => {
 			/>
 			<form
 				onSubmit={(e) => handleRegistration(e)}
-				className="text-white my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
+				className="text-foreground my-5 w-full flex flex-col gap-y-6 accent-secondary text-xs md:text-sm"
 			>
-				<h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-blue-500 to-primary animate-gradient font-semibold tracking-tight">
+				<h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold tracking-tight">
 					NEXUS Registrations
 				</h1>
 				<label
 					htmlFor="name"
 					className="flex flex-col gap-y-1 w-full "
 				>
-					<span className="after:content-['*'] after:text-secondary text-slate-100 font-medium text-xs">
+					<span className="after:content-['*'] after:text-secondary text-foreground font-medium text-xs">
 						Enter name
 					</span>
 					<input
@@ -163,7 +163,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						placeholder="John Doe"
 						value={userData?.name}
 						id="name"
-						className="bg-white/5 focus:shadow focus:shadow-secondary p-2 outline-white/10 outline-offset-0 rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+						className="bg-foreground/5 p-2  rounded-md lowercase focus:outline-secondary outline-foreground/10 outline-offset-0 focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					/>
 				</label>
 
@@ -171,7 +171,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 					htmlFor="email"
 					className="flex flex-col gap-y-1 w-full "
 				>
-					<span className="after:content-['*'] after:text-secondary text-white/90 font-medium text-xs">
+					<span className="after:content-['*'] after:text-secondary text-foreground font-medium text-xs">
 						Enter Email
 					</span>
 					<input
@@ -183,7 +183,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						value={userData?.email}
 						placeholder="johndoe@example.com"
 						id="email"
-						className="bg-white/5 p-2  rounded lowercase focus:outline-secondary outline-white/10 outline-offset-0 focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+						className="bg-foreground/5 p-2  rounded-md lowercase focus:outline-secondary outline-foreground/10 outline-offset-0 focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					/>
 				</label>
 
@@ -192,7 +192,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						htmlFor="prn"
 						className="flex flex-col gap-y-1 w-full "
 					>
-						<span className="after:content-['*'] after:text-secondary text-white/90 font-medium text-xs">
+						<span className="after:content-['*'] after:text-secondary text-foreground/90 font-medium text-xs">
 							Enter your PRN
 						</span>
 						<input
@@ -205,7 +205,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 							value={userData?.prn}
 							pattern="[pes/PES]1202[2/3][0-9]{4}"
 							id="prn"
-							className="bg-white/5 p-2 outline-white/10 outline-offset-0 rounded uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+							className="bg-foreground/5 p-2 outline-foreground/10 outline-offset-0 rounded-md uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 							maxLength={13}
 							minLength={13}
 						/>
@@ -215,7 +215,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						htmlFor="phone"
 						className="flex flex-col gap-y-1 w-full"
 					>
-						<span className=" text-white/90 after:content-['*'] after:text-secondary font-medium text-xs">
+						<span className=" text-foreground/90 after:content-['*'] after:text-secondary font-medium text-xs">
 							Enter your phone number
 						</span>
 						<input
@@ -228,12 +228,12 @@ const Form = ({ setUserData, userData, setPage }) => {
 							minLength={10}
 							maxLength={10}
 							placeholder="94XXXXXXXX"
-							className="bg-white/5 p-2 outline-white/10 outline-offset-0 rounded uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+							className="bg-foreground/5 p-2 outline-foreground/10 outline-offset-0 rounded-md uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 						/>
 					</label>
 				</div>
 
-				<span className="text-white/90 font-medium -mb-5 after:content-['*'] after:text-secondary text-xs">
+				<span className="text-foreground/90 font-medium -mb-5 after:content-['*'] after:text-secondary text-xs">
 					Enter semester
 				</span>
 				<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-4 font-medium">
@@ -241,7 +241,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						<label
 							key={option.id}
 							htmlFor={option.htmlForLabel}
-							className="radio-label text-xs focus:outline-secondary outline-white/10 focus:outline-offset-0 outline hover:bg-white/20 font-medium hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded"
+							className="radio-label text-xs focus:outline-secondary outline-foreground/10 focus:outline-offset-0 outline hover:bg-foreground/20 font-medium hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded-md"
 						>
 							<span>{option.value}</span>
 							<input
@@ -256,7 +256,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 					))}
 				</div>
 
-				<span className="text-white/90 font-medium -mb-5 after:content-['*'] after:text-secondary text-xs">
+				<span className="text-foreground/90 font-medium -mb-5 after:content-['*'] after:text-secondary text-xs">
 					Enter course
 				</span>
 				<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-4 font-medium">
@@ -264,7 +264,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						<label
 							key={option.id}
 							htmlFor={option.htmlForLabel}
-							className="radio-label text-xs font-medium focus:outline-secondary outline outline-white/10 outline-offset-0 focus:outline hover:bg-white/20 hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded"
+							className="radio-label text-xs font-medium focus:outline-secondary outline outline-foreground/10 outline-offset-0 focus:outline hover:bg-foreground/20 hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded-md"
 						>
 							<span>{option.value}</span>
 							<input
@@ -283,7 +283,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 					htmlFor="bio"
 					className="flex flex-col gap-y-1 w-full"
 				>
-					<span className="text-white/90 font-medium after:content-['*'] after:text-secondary text-xs">
+					<span className="text-foreground/90 font-medium after:content-['*'] after:text-secondary text-xs">
 						Tell something about youself
 					</span>
 					<textarea
@@ -293,7 +293,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						onChange={(e) => handleChange(e)}
 						placeholder="Something about yourself"
 						id="bio"
-						className=" bg-white/5 p-2 border-white/10 border-[1px]  rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+						className=" bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					/>
 				</label>
 
@@ -321,7 +321,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 					<button
 						type="button"
 						onClick={() => setModelIsOpen(true)}
-						className="w-full p-2 rounded uppercase font-medium tracking-wide text-sm px-3 py-1.5 flex items-center text-background bg-white justify-center outline outline-white/10"
+						className="w-full p-2 rounded-md uppercase font-medium tracking-wide text-sm px-3 py-1.5 flex items-center text-background bg-foreground justify-center outline outline-foreground/10"
 					>
 						Login
 					</button>
@@ -332,7 +332,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 							loading
 								? 'cursor-not-allowed bg-secondary/90 border-secondary/90'
 								: ' bg-secondary border-secondary '
-						} w-full border-[1px] rounded font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
+						} w-full border-[1px] rounded-md font-medium tracking-wide text-sm px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase`}
 					>
 						{loading ? (
 							<AiOutlineLoading3Quarters className="animate-spin ease-in-out" />

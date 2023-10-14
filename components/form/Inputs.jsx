@@ -14,7 +14,7 @@ export function TextInput({
 			className="flex flex-col gap-y-1 w-full"
 		>
 			<span
-				className={`${"after:content-[\'*\'] after:text-secondary"} text-slate-100 font-medium text-xs`}
+				className={`${"after:content-[\'*\'] after:text-secondary"} text-foreground-muted font-medium text-xs`}
 			>
 				{question}
 			</span>
@@ -24,7 +24,7 @@ export function TextInput({
 					required={required}
 					onChange={(e) => handleChange(e)}
 					placeholder={placeholder}
-					className="bg-white/5 p-2 border-white/10 border-[1px]  rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					className="bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					id={name}
 					name={name}
 				/>
@@ -44,7 +44,7 @@ export function RadioInput({
 	return (
 		<>
 			<span
-				className={`text-white/90 font-medium -mb-5 ${
+				className={`text-foreground/90 font-medium -mb-5 ${
 					required && "after:content-[\'*\'] after:text-secondary"
 				}`}
 			>
@@ -55,7 +55,7 @@ export function RadioInput({
 					<label
 						key={option.id}
 						htmlFor={option.htmlForLabel}
-						className="radio-label border-white/10 border-[1px]  hover:bg-white/20 font-medium hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded"
+						className="radio-label border-foreground/10 border-[1px]  hover:bg-foreground/20 font-medium hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded-md"
 					>
 						<span>{option.value}</span>
 						<input
@@ -90,7 +90,7 @@ export function EmailInput({
 			<span
 				className={`${
 					required && "after:content-[\'*\'] after:text-secondary"
-				} text-slate-100 font-medium text-xs`}
+				} text-foreground-muted font-medium text-xs`}
 			>
 				{question}
 			</span>
@@ -100,7 +100,7 @@ export function EmailInput({
 					required={required}
 					onChange={(e) => handleChange(e)}
 					placeholder={placeholder}
-					className="bg-white/5 p-2 border-white/10 border-[1px]  rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					className="bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					id={name}
 					name={name}
 				/>
@@ -121,7 +121,7 @@ export function CheckboxInput({
 	return (
 		<>
 			<span
-				className={`text-white/90 font-medium -mb-5  ${
+				className={`text-foreground/90 font-medium -mb-5  ${
 					required && "after:content-[\'*\'] after:text-secondary"
 				}`}
 			>
@@ -132,7 +132,7 @@ export function CheckboxInput({
 					<label
 						key={option.id}
 						htmlFor={option.htmlForLabel}
-						className="radio-label border-white/10 border-[1px] hover:bg-white/20 font-medium hover:shadow-lg bg-white/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded"
+						className="radio-label border-foreground/10 border-[1px] hover:bg-foreground/20 font-medium hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-2 flex items-center justify-center rounded-md"
 					>
 						<span>{option.value}</span>
 						<input
@@ -170,7 +170,7 @@ export function RangeInput({
 			<span
 				className={`${
 					required && "after:content-[\'*\'] after:text-secondary"
-				} text-slate-100 font-medium text-xs}`}
+				} text-foreground-muted font-medium text-xs}`}
 			>
 				{question}
 			</span>
@@ -183,7 +183,7 @@ export function RangeInput({
 					required={required}
 					onChange={(e) => handleChange(e)}
 					placeholder={placeholder}
-					className="bg-white/5 p-2 border-white/10 border-[1px]  rounded lowercase  focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					className="bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md lowercase  focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					id={name}
 					name={name}
 				/>
@@ -208,7 +208,7 @@ export function TextAreaInput({
 			<span
 				className={`${
 					required && "after:content-[\'*\'] after:text-secondary"
-				} text-slate-100 font-medium text-xs`}
+				} text-foreground-muted font-medium text-xs`}
 			>
 				{question}
 			</span>
@@ -216,7 +216,7 @@ export function TextAreaInput({
 				<textarea
 					placeholder={placeholder}
 					onChange={(e) => handleChange(e)}
-					className="bg-white/5 p-2 border-white/10 border-[1px]  rounded lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+					className="bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					id={name}
 					name={name}
 					required={required}
@@ -243,7 +243,7 @@ export function TelInput({
 			<span
 				className={`${
 					required && "after:content-['*'] after:text-secondar"
-				} text-white/90 y font-medium`}
+				} text-foreground/90 y font-medium`}
 			>
 				{question}
 			</span>
@@ -258,7 +258,7 @@ export function TelInput({
 				minLength={10}
 				maxLength={10}
 				placeholder={placeholder}
-				className="bg-white/5 p-2 border-white/10 border-[1px] rounded focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+				className="bg-foreground/5 p-2 border-foreground/10 border-[1px] rounded-md focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 			/>
 		</label>
 	);

@@ -7,11 +7,11 @@ const SubHero = ({ title, subtitle, children }) => {
       <h1 className="text-clamp capitalize text-center font-black bg-gradient-to-r from-primary via-blue-500 to-secondary text-transparent bg-clip-text animate-gradient">
         {title}
       </h1>
-      <h2 className="md:text-2xl text-xl text-white sm:text-balance text-center font-bold">
+      <h2 className="md:text-2xl text-xl text-foreground sm:text-balance text-center font-bold">
         &quot;{subtitle}&quot;
       </h2>
 
-      <p className="mx-8 mb-8 backdrop:text-text-primary text-sm md:text-base text-center text-balance font-medium leading-5 md:leading-6">
+      <p className="mx-8 mb-8 backdrop:text-foreground-muted text-sm md:text-base text-center text-balance font-medium leading-5 md:leading-6">
         {children}
       </p>
     </div>

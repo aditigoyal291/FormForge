@@ -12,13 +12,13 @@ const Message = ({ children, message, type, display }) => {
 			<div
 				className={`${
 					type === 'success'
-						? 'border-teal-500 bg-teal-300/80 text-teal-900'
+						? 'border-message-success-background bg-message-success-foreground text-message-success-background'
 						: type === 'warn'
-						? 'bg-yellow-200 border-yellow-600 text-yellow-950'
+						? 'bg-message-warn-foreground border-message-warn-background text-message-warn-background'
 						: type === 'error'
-						? 'bg-red-300/80 border-red-500 text-red-950'
-						: 'bg-blue-300/80 border-blue-500 text-blue-950'
-				} border-[1px] p-2 rounded flex items-start gap-x-2`}
+						? 'bg-message-warn-foreground border-message-error-background text-message-error-background'
+						: 'bg-message-info-foreground border-message-info-background text-message-info-background'
+				} border-[1px] p-2 rounded-md flex items-start gap-x-2`}
 			>
 				{type === 'success' ? (
 					<AiFillCheckCircle className="w-5 h-5" />

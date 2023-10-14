@@ -2,27 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-.radio-label:has(input[type="radio"]:checked, input[type="checkbox"]:checked) {
-  outline: 3px solid #006dfa;
-  color: #fff;
-}
+@layer base {
+	:root {
+		--background: 270 25% 2%;
+		--foreground: 210 20% 98%;
+		--foreground-muted: 214 32% 91%;
+		--primary: 203 100% 50%;
+		--secondary: 214 100% 49%;
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
+		--radius: 0.3rem;
+		--message-warn-foreground: 26, 83%, 14%;
+		--message-warn-background: 50, 98%, 64%;
+		--message-success-foreground: 171, 77%, 64%;
+		--message-success-background: 176, 61%, 19%;
+		--message-info-foreground: 226, 57%, 21%;
+		--message-info-background: 212, 96%, 78%;
+		--message-error-foreground: 0, 75%, 15%;
+		--message-error-background: 0, 94%, 82%;
 
-.main {
-  background: url("./../public/sample-bg.jpg") no-repeat top center;
-}
+    --modal-background: 0, 0%, 4%;
 
-.gradient {
-  background-image: radial-gradient(transparent 20%, #040305 60%);
-}
+    --input: 215 27.9% 16.9%;
+	}
 
+	.radio-label:has(
+			input[type='radio']:checked,
+			input[type='checkbox']:checked
+		) {
+		outline: 3px solid hsl(var(--secondary));
+		color: #fff;
+	}
 
-@layer base{
-  ::root{
-    --background: 270 25% 2%; 
-  }
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+	}
+
+	.main {
+		background: url('./../public/sample-bg.jpg') no-repeat top center;
+	}
+
+	.gradient {
+		background-image: radial-gradient(
+			transparent 20%,
+			hsl(var(--background)) 60%
+		);
+	}
 }
