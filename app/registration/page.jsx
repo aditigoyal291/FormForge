@@ -12,14 +12,14 @@ const RegistrationPage = () => {
 	const [domainData, setDomainData] = useState({});
 	return (
 		<>
-			<main className="main mt-1 mx-4 sm:mx-14 md:mx-auto max-w-screen-xl gap-y-10 md:gap-y-14 flex justify-center flex-col">
+			<main className="main my-1 mx-4 sm:mx-14 md:mx-auto max-w-screen-xl gap-y-10 md:gap-y-14 flex justify-center flex-col">
 				<div className="gradient flex outline flex-col gap-16">
-					<SubHero
+					{/* <SubHero
 						title="Recruitment"
 						subtitle="Our Story: Pioneering Progress in Technology and Innovation"
 					>
 						Some message
-					</SubHero>
+					</SubHero> */}
 					{process.env.NODE_ENV !== 'production' && (
 						<p className="text-white text-xs">
 							{JSON.stringify(userData)}
@@ -27,7 +27,7 @@ const RegistrationPage = () => {
 							{JSON.stringify(domainData)}
 						</p>
 					)}
-					<div className="flex justify-center items-center md:w-[60vw] md:max-w-3xl w-full mx-auto">
+					<div className="flex justify-center items-center md:w-[60vw] md:max-w-3xl w-full mx-auto mb-10">
 						<div className="w-full border border-white/10 rounded-xl flex sm:p-10 p-4 justify-center backdrop-blur-lg">
 							{page === 1 ? (
 								<Form

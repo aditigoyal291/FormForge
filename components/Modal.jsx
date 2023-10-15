@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import Message from './Message';
+import Button from './Button';
 const Modal = ({
 	setUserData,
 	userData,
@@ -31,7 +32,7 @@ const Modal = ({
 				body: JSON.stringify(userData),
 			});
 			const data = await res.json();
-			console.log(data)
+			console.log(data);
 
 			setMessage({
 				display: true,
@@ -72,7 +73,7 @@ const Modal = ({
 				display: true,
 				message: error,
 				description: error.message,
-				type: 'error'
+				type: 'error',
 			});
 			console.log(error);
 		} finally {
@@ -186,16 +187,12 @@ const Modal = ({
 								/>
 							</label>
 							<div className="flex justify-between w-full gap-3 mt-5">
-								<button
+								<Button
 									type="submit"
-									className="h-8 flex justify-center items-center bg-secondary p-3 uppercase py-1.5 w-full rounded-md text-sm"
+									loading={loading}
 								>
-									{loading ? (
-										<AiOutlineLoading3Quarters className="animate-spin ease-in-out" />
-									) : (
-										'Log In'
-									)}
-								</button>
+									Log in
+								</Button>
 							</div>
 						</form>
 					</div>

@@ -1,6 +1,8 @@
 import { domains } from '@/constants/baseQuestions';
 import { useState } from 'react';
 import Message from '../Message';
+import club from './../../constants/club';
+import Button from '../Button';
 
 const DomainList = ({ setPage, setDomain }) => {
 	const handleDomainChange = (e) => {
@@ -30,11 +32,16 @@ const DomainList = ({ setPage, setDomain }) => {
 	});
 
 	return (
-		<form className="flex text-foreground mt-10 w-full text-sm">
-			<div className="flex flex-col gap-y-10 w-full">
-				<span className="text-base">
-					Enter the domain of your interest
-				</span>
+		<form className="flex text-foreground my-10 w-full text-sm">
+			<div className="flex flex-col gap-y-6 w-full">
+				<div>
+					<h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold tracking-tight">
+						{club.club.name} Registrations
+					</h1>
+					<span className="text-base text-foreground">
+						Enter the domain of your interest
+					</span>
+				</div>
 				<div className="grid grid-cols-1 gap-4">
 					{domains.map((domain, i) => (
 						<div
@@ -50,7 +57,7 @@ const DomainList = ({ setPage, setDomain }) => {
 										<h2 className="text-base font-semibold text-foreground">
 											{domain.domain}
 										</h2>
-										<p className="whitespace-nowrap shadow-2xl h-fit px-3  rounded-xl outline-none bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold flex items-center justify-center text-xxs">
+										<p className="whitespace-nowrap shadow-2xl h-fit px-3 rounded-md outline-none bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold flex items-center justify-center text-xxs">
 											{domain.type === 'tech'
 												? 'Tech'
 												: 'Non-Tech'}
@@ -80,22 +87,20 @@ const DomainList = ({ setPage, setDomain }) => {
 				>
 					{message.description}
 				</Message>
-				<div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
-					<button
+				<div className="flex items-center justify-end gap-2 md:gap-3">
+					<Button
+						variant="mute"
 						type="reset"
-						onClick={() => setDomain(null)}
-						className="bg-foreground/5 w-full p-2 uppercase font-semibold border-foreground/10 border-[1px] rounded-md focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
+						handleClick={() => setDomain(null)}
 					>
 						Reset
-					</button>
-
-					<button
-						type="submit"
-						onClick={(e) => handleDomainChange(e)}
-						className=" bg-secondary border-secondary w-full border-[1px] rounded-md font-semibold px-3 py-1.5 flex items-center justify-center h-9 sm:h-full uppercase"
+					</Button>
+					<Button
+						type="button"
+						handleClick={(e) => handleDomainChange(e)}
 					>
 						Register
-					</button>
+					</Button>
 				</div>
 			</div>
 		</form>

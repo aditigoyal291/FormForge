@@ -57,18 +57,26 @@ module.exports = {
 				'modal-background': 'hsl(var(--modal-background))',
 			},
 			borderRadius: {
-				'2xl': `calc(var(--radius) + 4px)`,
+				'2xl': `calc(var(--radius) + 10px)`,
 				xl: `calc(var(--radius) + 2px)`,
 				lg: `var(--radius)`,
 				md: `calc(var(--radius) - 2px)`,
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			keyframes: {
-				animatedgradient: {
-					'0%': { backgroundPosition: '0% 50%' },
-					'50%': { backgroundPosition: '100% 50%' },
-					'100%': { backgroundPosition: '0% 50%' },
+				shine: {
+					'0%': {
+						'background-size': '200% 200%',
+						'background-position': 'right center',
+					},
+					'100%': {
+						'background-size': '200% 200%',
+						'background-position': 'left top',
+					},
 				},
+			},
+			animation: {
+				shine: 'shine 2s linear',
 			},
 			backgroundSize: {
 				'300%': '300%',
