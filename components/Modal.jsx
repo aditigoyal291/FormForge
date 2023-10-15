@@ -20,7 +20,6 @@ const Modal = ({
 
 	function handleCrossClick() {
 		setModelIsOpen(false);
-		setUserData({});
 	}
 
 	async function handleSubmit(e) {

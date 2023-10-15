@@ -1,4 +1,4 @@
-import prisma from '@/prisma';
+import prisma from '@/utils/prisma';
 import { NextResponse } from 'next/server';
 
 export async function POST(req, res) {
@@ -34,8 +34,7 @@ export async function POST(req, res) {
 			return NextResponse.json(
 				{
 					message: 'User not registered',
-					description:
-						'You have to register first before login',
+					description: 'You have to register first before login',
 					type: 'error',
 					code: 7,
 				},
@@ -54,9 +53,8 @@ export async function POST(req, res) {
 			return NextResponse.json(
 				{
 					existing,
-					message: 'Credentials don\'t match',
-					description:
-						'Check your PRN and Email once again',
+					message: "Credentials don't match",
+					description: 'Check your PRN and Email once again',
 					type: 'warn',
 					code: 6,
 				},
