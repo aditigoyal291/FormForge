@@ -2,10 +2,7 @@ import { maxDomainCount } from '@/constants/baseQuestions';
 import prisma from '@/prisma';
 import { NextResponse } from 'next/server';
 
-
 export async function POST(req, res) {
-
-
 	try {
 		const body = await req.json();
 		const { domain, email, prn } = body;
@@ -282,9 +279,18 @@ export async function POST(req, res) {
 			},
 		});
 
+		// const emailData = await fetch('/api/email', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({ updatedRookie, domain }),
+		// });
+
+		// const data = await emailData.json();
+		// console.log(data);
+
 		return NextResponse.json(
 			{
 				updatedRookie,
+				// resendId:
 				type: 'success',
 				message: 'Registration Accepted',
 				description: `you are registerd for ${domain}`,
