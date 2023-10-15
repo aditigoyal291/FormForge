@@ -1,4 +1,4 @@
-import prisma from '@/prisma';
+import prisma from '@/utils/prisma';
 import { NextResponse } from 'next/server';
 
 export async function POST(req, res) {
@@ -52,7 +52,7 @@ export async function POST(req, res) {
 			},
 		});
 
-		console.log(newRegistration)
+		console.log(newRegistration);
 		return NextResponse.json(
 			{
 				newRegistration,
@@ -70,7 +70,7 @@ export async function POST(req, res) {
 				message: error,
 				description: JSON.stringify(error.message),
 				status: 'error',
-        code: 8
+				code: 8,
 			},
 			{ status: 500 }
 		);

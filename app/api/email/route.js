@@ -11,6 +11,7 @@ export async function POST(req, res) {
 
 	const body = await req.json();
 	console.log(body);
+	console.log('from route.js');
 
 	try {
 		console.log('i am running 2');
@@ -19,7 +20,7 @@ export async function POST(req, res) {
 			from: 'onboardin@resend.dev',
 			to: 'sarangkumar1578@gmail.com',
 			subject: 'Registration Done',
-			react: Register({username: 'Sarang'}),
+			react: Register(body),
 		});
 		console.log('i am running 3');
         console.log(emailData)

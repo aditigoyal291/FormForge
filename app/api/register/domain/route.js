@@ -1,5 +1,7 @@
 import { maxDomainCount } from '@/constants/baseQuestions';
-import prisma from '@/prisma';
+import { clubDetails } from '@/constants/clubDetails';
+import prisma from '@/utils/prisma';
+import sendEmail from '@/utils/sendEmail';
 import { NextResponse } from 'next/server';
 
 export async function POST(req, res) {
@@ -287,10 +289,29 @@ export async function POST(req, res) {
 		// const data = await emailData.json();
 		// console.log(data);
 
+		console.log(updatedRookie)
+
+		try {
+			const data = await sendEmail({
+				domain: domain,
+				username: updatedRookie.name,
+				useremail: updatedRookie.email,
+				invitedByUsername: clubDetails.club.name,
+				clubEmail: clubDetails.club.email,
+				clubWebsite: clubDetails.club.website,
+				clubInstagram: clubDetails.club.instagram,
+				clubName: clubDetails.club.name,
+				prn: updatedRookie.prn,
+				registrationId: updatedRookie.id,
+			});
+			console.log(data)
+		} catch (error) {
+			console.log('could not send email');
+		}
+
 		return NextResponse.json(
 			{
 				updatedRookie,
-				// resendId:
 				type: 'success',
 				message: 'Registration Accepted',
 				description: `you are registerd for ${domain}`,

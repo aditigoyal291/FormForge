@@ -2,6 +2,8 @@ export const clubDetails = {
 	club: {
 		name: 'Nexus',
 		email: 'nexus_cse@gmail.com',
+		website: 'https://nexus-pes.vercel.app',
+		instagram: 'https://instagram.com/nexus_cse',
 	},
 
 	heads: [
