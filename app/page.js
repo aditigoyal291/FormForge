@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 const page = () => {
 	return (
-		<>
+		
 			<div className="py-4 outline flex flex-col mx-auto min-h-[100svh]">
 				<Navbar />
 				<div className="flex-1 h-full text-white flex items-center justify-center flex-col gap-5 mt-20">
@@ -23,15 +23,15 @@ const page = () => {
 						</div>
 						<div className="my-4">
 							<div className="w-full flex justify-center flex-col items-center bg-gradient-to-br from-foreground text-transparent bg-clip-text font-semibold ">
-								<span className="before:bg-shine relative mb-8 text-foreground before:absolute before:left-0 before:top-0 before:w-full before:bg-clip-text before:text-transparent text-[42px] leading-[10px] sm:text-[58px] md:text-[84px] md:leading-[48px] sm:leading-[25px] tracking-[-1.024px;]  ">
+								<span className="before:bg-shine relative mb-8 text-foreground before:absolute before:left-0 before:top-0 before:w-full before:bg-clip-text before:text-transparent text-[42px] leading-[10px] sm:text-[58px] md:text-[84px] md:leading-[48px] sm:leading-[25px] tracking-[-1.024px]  ">
 									Forms For
 								</span>
-								<p className="before:bg-shine relative mb-8 text-foreground before:absolute before:left-0 before:top-0 before:w-full before:bg-clip-text before:text-transparent] text-[42px] leading-[10px] sm:text-[58px] sm:leading-[25px] md:text-[84px] md:leading-[48px] tracking-[-1.024px;]  ">
+								<p className="before:bg-shine relative mb-8 text-foreground before:absolute before:left-0 before:top-0 before:w-full before:bg-clip-text before:text-transparent] text-[42px] leading-[10px] sm:text-[58px] sm:leading-[25px] md:text-[84px] md:leading-[48px] tracking-[-1.024px]  ">
 									Developers
 								</p>
 							</div>
 							<p className="text-foreground-muted/80 text-sm sm:text-base md:text-lg my-3 text-center mx-5 text-balance">
-								"Form generators simplify form creation, data collection, analysis, offering a user-friendly platform for surveys, feedback, and more."
+								Form generators simplify form creation, data collection, analysis, offering a user-friendly platform for surveys, feedback, and more.
 							</p>
 							<div className="my-5 flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
 								<Link
@@ -56,7 +56,7 @@ const page = () => {
 											Register
 										</span>
 										<span>
-											<BiRightArrowAlt className="w-[16px]" />
+											<BiRightArrowAlt className="w-4" />
 										</span>
 									</button>
 								</Link>
@@ -96,7 +96,7 @@ const page = () => {
 					</div>
 				</div>
 			</div>
-		</>
+	
 	);
 };
 
