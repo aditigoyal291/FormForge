@@ -24,22 +24,22 @@ const Form = ({ setUserData, userData, setPage }) => {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			setUserData({
+			const tempData = {
 				...userData,
+				prn: userData.prn.toLowerCase(),
 				name: userData.name.toLowerCase(),
 				email: userData.email.toLowerCase(),
-				prn: userData.prn.toLowerCase(),
-				course: userData.course,
-				domain: userData.domain,
-			});
+			};
+
+			setUserData(tempData);
 
 			const res = await fetch('/api/register', {
 				method: 'POST',
-				body: JSON.stringify(userData),
+				body: JSON.stringify(tempData),
 			});
 			const data = await res.json();
 
-			localStorage.setItem('rookie', JSON.stringify(userData));
+			localStorage.setItem('rookie', JSON.stringify(tempData));
 			console.log(data);
 
 			setMessage({

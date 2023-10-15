@@ -3,6 +3,8 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import Message from './Message';
 import Button from './Button';
+
+
 const Modal = ({
 	setUserData,
 	userData,
@@ -19,6 +21,7 @@ const Modal = ({
 		type: '',
 	});
 
+
 	function handleCrossClick() {
 		setModelIsOpen(false);
 	}
@@ -26,10 +29,23 @@ const Modal = ({
 	async function handleSubmit(e) {
 		e.preventDefault();
 		setLoading(true);
+
+
+
 		try {
+	const tempData = {
+				...userData,
+				prn: userData.prn.toLowerCase(),
+				name: userData.name.toLowerCase(),
+				email: userData.email.toLowerCase(),
+			};
+
+			setUserData(tempData);
+
+
 			const res = await fetch('/api/retrieve', {
 				method: 'POST',
-				body: JSON.stringify(userData),
+				body: JSON.stringify(tempData),
 			});
 			const data = await res.json();
 			console.log(data);
@@ -66,7 +82,7 @@ const Modal = ({
 				setTimeout(() => {
 					setModelIsOpen(false);
 					setPage(2);
-				}, 1500);
+				}, 3000);
 			}
 		} catch (error) {
 			setMessage({
@@ -80,7 +96,7 @@ const Modal = ({
 			setLoading(false);
 			setTimeout(() => {
 				setMessage({ display: false });
-			}, 1500);
+			}, 3000);
 		}
 	}
 
@@ -120,7 +136,7 @@ const Modal = ({
 							onSubmit={(e) => handleSubmit(e)}
 							className="w-full flex gap-y-5 flex-col accent-secondary text-xs"
 						>
-							<label
+							{/* <label
 								htmlFor="name"
 								className="space-y-1"
 							>
@@ -140,7 +156,7 @@ const Modal = ({
 									required
 									disabled={loading}
 								/>
-							</label>
+							</label> */}
 							<label
 								htmlFor="email"
 								className="space-y-1"

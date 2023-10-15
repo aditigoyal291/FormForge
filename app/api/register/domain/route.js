@@ -25,7 +25,7 @@ export async function POST(req, res) {
 		const existing = await prisma.rookie.findUnique({
 			where: {
 				email,
-				prn,
+				prn: prn.toLowerCase(),
 			},
 		});
 
