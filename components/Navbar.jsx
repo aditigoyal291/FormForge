@@ -8,7 +8,7 @@ const Navbar = () => {
 			<div className="p-4 flex gap-2 items-center">
 				Forms
 				{/* <span className="text-xs rounded text-primary border-[1px] border-opacity-10 border-primary px-1 p-px"> */}
-				<span className="text-xs rounded px-1.5 py-0.5 bg-cyan-2 text-secondary border-secondary border inline-flex items-center justify-center font-medium">
+				<span className="text-xs rounded px-1.5 py-0.5 bg-cyan-2 text-secondary border-secondary border-2 inline-flex items-center justify-center font-medium">
 					Beta
 				</span>
 			</div>
