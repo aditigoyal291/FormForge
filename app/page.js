@@ -30,7 +30,7 @@ const page = () => {
 									Developers
 								</p>
 							</div>
-							<p className="text-foreground-muted/80 text-sm sm:text-base md:text-lg my-3 text-center mx-5 text-balance">
+							<p className="text-foreground-muted/80 text-sm sm:text-base md:text-lg my-3 text-center mx-5 text-balance max-w-md">
 								Form generators simplify form creation, data collection, analysis, offering a user-friendly platform for surveys, feedback, and more.
 							</p>
 							<div className="my-5 flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
