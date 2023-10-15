@@ -21,7 +21,7 @@ const page = () => {
       </div>
       <div className="flex flex-col gap-6 items-center  w-fit ">
         <p className="text-text-primary  text-lg ">
-          The most reusable form you'll ever find xD
+          The most reusable form you&apos;ll ever find xD
         </p>
         <Link href="/registration" className="w-full">
           <button className="bg-foreground px-6  rounded-full w-full  text-black py-3 hover:bg-text-primary flex justify-center gap-2">
