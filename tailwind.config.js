@@ -35,8 +35,6 @@ module.exports = {
 				foreground: 'hsl(var(--foreground))',
 				'foreground-muted': 'hsl(var(--foreground-muted))',
 
-				'text-primary': '#E6E6E6',
-				'text-secondary': '#888888',
 				'message-warn-foreground':
 					'hsl(var(--message-warn-foreground))',
 				'message-warn-background':
