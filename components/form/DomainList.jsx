@@ -1,13 +1,36 @@
-import { domains } from "@/constants/baseQuestions";
+import { domains } from '@/constants/baseQuestions';
+import { useState } from 'react';
+import Message from '../Message';
 
-const DomainList = ({ setPage, setDomain, }) => {
+const DomainList = ({ setPage, setDomain }) => {
+	const handleDomainChange = (e) => {
+		e.preventDefault();
+		if (domains!== null || domains!== undefined) {
+			console.log('heleldfas')
+			setPage(3);
+			return;
+		}
 
-  const handleDomainChange = (e) => {
-    e.preventDefault();
-    setPage(3);
-  };
+		setMessage({
+			display: true,
+			type: 'warn',
+			message: 'Domain missing',
+			description: 'Select a domain to proceed',
+		});
 
-  return (
+		setTimeout(() => {
+			setMessage({ display: false });
+		}, 2000);
+	};
+
+	const [message, setMessage] = useState({
+		display: false,
+		message: '',
+		description: '',
+		type: '',
+	});
+
+	return (
 		<form className="flex text-foreground mt-10 w-full text-sm">
 			<div className="flex flex-col gap-y-10 w-full">
 				<span className="text-base">
@@ -47,14 +70,21 @@ const DomainList = ({ setPage, setDomain, }) => {
 										}
 										id={domain.name}
 										value={domain.name}
-										className="self-start box-content rounded-full bg-foreground/20 p-1 ring-foreground/20 bg-clip-padding outline-none ring-1 
-                 checked:border-primary checked:border-[4px] checked:ring-primary w-2 appearance-none h-2 checked:bg-foreground/80 border-[5px] border-foreground/20"
+										required
+										className="self-start box-content rounded-full bg-foreground/20 p-1 ring-foreground/20 bg-clip-padding outline-none ring-1  checked:border-primary checked:border-[4px] checked:ring-primary w-2 appearance-none h-2 checked:bg-foreground/80 border-[5px] border-foreground/20"
 									/>
 								</label>
 							</div>
 						</>
 					))}
 				</div>
+				<Message
+					type={message.type}
+					message={message.message}
+					display={message.display}
+				>
+					{message.description}
+				</Message>
 				<div className="mt-8 flex items-center flex-col-reverse sm:flex-row justify-end gap-2 md:gap-3">
 					<button
 						type="reset"
@@ -74,7 +104,7 @@ const DomainList = ({ setPage, setDomain, }) => {
 				</div>
 			</div>
 		</form>
-  );
+	);
 };
 
 export default DomainList;

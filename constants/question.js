@@ -45,7 +45,7 @@ export const questions = [
 				question: 'Advantages of Next?',
 				name: 'solution3',
 				inputType: 'checkbox',
-				
+				required: true,
 				options: [
 					{
 						id: 1,
@@ -75,6 +75,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 5,
@@ -82,6 +83,7 @@ export const questions = [
 				name: 'solution5',
 				inputType: 'range',
 				placeholder: 'Long text',
+				required: true,
 				min: 0,
 				max: 10,
 			},
@@ -125,6 +127,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -139,6 +142,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -155,6 +159,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -163,6 +168,8 @@ export const questions = [
 				inputType: 'text',
 				required: true,
 				placeholder: 'Enter your answer here',
+
+				required: true,
 			},
 		],
 	},
@@ -177,6 +184,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -185,6 +193,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -193,6 +202,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -201,6 +211,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -215,6 +226,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -223,6 +235,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -231,6 +244,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -239,6 +253,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -253,6 +268,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -261,6 +277,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -269,6 +286,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -277,6 +295,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -291,6 +310,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -299,6 +319,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -307,6 +328,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -315,6 +337,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -328,6 +351,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true
 			},
 			{
 				id: 2,
@@ -336,6 +360,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true
 			},
 			{
 				id: 3,
@@ -343,6 +368,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true
 			},
 			{
 				id: 4,
@@ -351,6 +377,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true
 			},
 		],
 	},
@@ -365,6 +392,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -373,6 +401,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -381,6 +410,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -389,6 +419,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -403,6 +434,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -411,6 +443,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -418,7 +451,7 @@ export const questions = [
 					'What is the process of acquiring and managing event sponsorships?',
 				name: 'solution3',
 				inputType: 'textarea',
-				placeholder: 'Long text',
+				placeholder: 'Long text'
 			},
 			{
 				id: 4,
@@ -427,6 +460,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -441,6 +475,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -449,6 +484,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -457,6 +493,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -465,6 +502,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
@@ -479,6 +517,7 @@ export const questions = [
 				name: 'solution1',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 2,
@@ -487,6 +526,7 @@ export const questions = [
 				name: 'solution2',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 3,
@@ -495,6 +535,7 @@ export const questions = [
 				name: 'solution3',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 			{
 				id: 4,
@@ -503,6 +544,7 @@ export const questions = [
 				name: 'solution4',
 				inputType: 'textarea',
 				placeholder: 'Long text',
+				required: true,
 			},
 		],
 	},
