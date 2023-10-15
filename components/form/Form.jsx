@@ -4,7 +4,6 @@ import Message from "../Message";
 import Modal from "../Modal";
 import { courseOptions, semesterOptions } from "@/constants/baseQuestions";
 import Link from "next/link";
-// import { clubDetails } from "@/constants/clubDetails";
 
 
 const Form = ({ setUserData, userData, setPage }) => {

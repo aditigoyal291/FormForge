@@ -11,7 +11,7 @@ import { questions } from '../../constants/question';
 import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Message from '../Message';
-import { clubDetails } from '@/constants/clubDetails';
+import clubDetails from '../../constants/clubDetails';
 import sendEmail from '@/utils/sendEmail';
 
 const DomainQuestion = ({
