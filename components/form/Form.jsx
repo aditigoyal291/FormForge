@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Message from "../Message";
 import Modal from "../Modal";
-import {
-  courseOptions,
-  semesterOptions,
-  clubName,
-} from "@/constants/baseQuestions";
+import { courseOptions, semesterOptions } from "@/constants/baseQuestions";
+import { clubDetails } from "@/constants/ClubDetails";
+import Link from "next/link";
 
 const Form = ({ setUserData, userData, setPage }) => {
   const [loading, setLoading] = useState(false);
@@ -258,13 +256,11 @@ const Form = ({ setUserData, userData, setPage }) => {
           <p className="text-xs">
             in case something doesn&apos;t work, feel free to
           </p>
-          {clubName.map((club) => (
-            <div key={club.id}>
-              <a href={club.mail} className="text-secondary text-xs ">
-                <span className="underline">contact us</span>
-              </a>
-            </div>
-          ))}
+          <span className="text-xs text-secondary underline">
+            <a href="mailto:sarangkumar1578@gmail.com?cc=adiigoyal2912@gmail.com&subject=This link is not working">
+              Contact us
+            </a>
+          </span>
         </div>
       </form>
     </>

@@ -154,10 +154,4 @@ export const domains = [
   },
 ];
 
-export const clubName = [
-  {
-    id: 1,
-    club: "Nexus",
-    mail: "mailto:nexus_cse@pes.edu?cc=monish72003@gmail.com,ayushsinha9870@gmail.com&bcc=sarangkumar1578@gmail.com&subject=Registration&body=This%20is%20about%20%5Bissue%5D.%0D%0A%0D%0ABODY",
-  },
-];
+
