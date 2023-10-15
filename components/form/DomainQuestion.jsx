@@ -52,7 +52,7 @@ const DomainQuestion = ({
 				}),
 			});
 			const data = await res.json();
-			console.log(data)
+			console.log(data, 'from domain questionn')
 
 			setMessage({
 				display: true,
@@ -64,19 +64,33 @@ const DomainQuestion = ({
 			if (data.code === 2) {
 
 				try {
-					const emailData = await sendEmail({
+					console.log({
 						domain: domain,
-						username: data.name,
-						useremail: data.email,
+						username: data.updatedRookie.name,
+						useremail: data.updatedRookie.email,
 						invitedByUsername: clubDetails.club.name,
 						clubEmail: clubDetails.club.email,
 						clubWebsite: clubDetails.club.website,
 						clubInstagram: clubDetails.club.instagram,
 						clubName: clubDetails.club.name,
-						prn: data.prn,
-						registrationId: data.id,
+						prn: data.updatedRookie.prn,
+						registrationId: data.updatedRookie.id,
+					})
+					console.log('domain question')
+
+					const emailData = await sendEmail({
+						domain: domain,
+						username: data.updatedRookie.name,
+						useremail: data.updatedRookie.email,
+						invitedByUsername: clubDetails.club.name,
+						clubEmail: clubDetails.club.email,
+						clubWebsite: clubDetails.club.website,
+						clubInstagram: clubDetails.club.instagram,
+						clubName: clubDetails.club.name,
+						prn: data.updatedRookie.prn,
+						registrationId: data.updatedRookie.id,
 					});
-					console.log(emailData);
+					
 				} catch (error) {
 					console.log('could not send email');
 				}

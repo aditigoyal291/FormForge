@@ -6,7 +6,7 @@ export async function POST(req, res) {
 	try {
 		const body = await req.json();
 		const { domain, email, prn } = body;
-		console.log(body);
+		// console.log(body);
 
 		if (!email || !prn || !domain) {
 			return NextResponse.json(
@@ -29,7 +29,7 @@ export async function POST(req, res) {
 			},
 		});
 
-		console.log(existing);
+		// console.log(existing);
 
 		if (existing === null) {
 			return NextResponse.json(
@@ -67,7 +67,7 @@ export async function POST(req, res) {
 
 		switch (domain) {
 			case 'webdev':
-				console.log('webdev');
+				// console.log('webdev');
 
 				// repeatedDomain(existing.registeredDomains, 'webdev');
 
@@ -83,11 +83,9 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'appdev':
-				console.log('appdev');
+				// console.log('appdev');
 
 				// repeatedDomain(existing.registeredDomains, 'appdev');
-
-				console.log(solution1);
 
 				domainRegistration = await prisma.appdev.create({
 					data: {
@@ -100,7 +98,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'aiml':
-				console.log('aiml');
+				// console.log('aiml');
 
 				// repeatedDomain(existing.registeredDomains, 'aiml');
 
@@ -115,13 +113,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'cp':
-				console.log('cp');
-
-				// console.log(
-				// 	existing.registeredDomains,
-				// 	existing.registeredDomains.includes('cp')
-				// 	);
-				// 	repeatedDomain(existing.registeredDomains, 'cp');
+				// console.log('cp');
 				domainRegistration = await prisma.cp.create({
 					data: {
 						solution1,
@@ -133,7 +125,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'design':
-				console.log('design');
+				// console.log('design');
 
 				// repeatedDomain(existing.registeredDomains, 'design');
 				domainRegistration = await prisma.design.create({
@@ -147,7 +139,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'operation':
-				console.log('operation');
+				// console.log('operation');
 
 				// repeatedDomain(existing.registeredDomains, 'operation');
 				domainRegistration = await prisma.operation.create({
@@ -161,7 +153,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'content':
-				console.log('content');
+				// console.log('content');
 
 				// repeatedDomain(existing.registeredDomains, 'content');
 				domainRegistration = await prisma.content.create({
@@ -175,7 +167,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'marketing':
-				console.log('marketing');
+				// console.log('marketing');
 
 				// repeatedDomain(existing.registeredDomains, 'marketing');
 				domainRegistration = await prisma.marketing.create({
@@ -189,7 +181,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'logistics':
-				console.log('logistics');
+				// console.log('logistics');
 
 				// repeatedDomain(existing.registeredDomains, 'logistics');
 				domainRegistration = await prisma.logistics.create({
@@ -204,7 +196,7 @@ export async function POST(req, res) {
 
 				break;
 			case 'evm':
-				console.log('evm');
+				// console.log('evm');
 
 				// repeatedDomain(existing.registeredDomains, 'evm');
 				domainRegistration = await prisma.evm.create({
@@ -219,7 +211,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'campaigning':
-				console.log('campaigning');
+				// console.log('campaigning');
 
 				// repeatedDomain(existing.registeredDomains, 'campaigning');
 				domainRegistration = await prisma.campaigning.create({
@@ -233,7 +225,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'sponsor':
-				console.log('sponsor');
+				// console.log('sponsor');
 
 				// repeatedDomain(existing.registeredDomains, 'sponsor');
 				domainRegistration = await prisma.sponsor.create({
@@ -247,7 +239,7 @@ export async function POST(req, res) {
 				});
 				break;
 			case 'pr':
-				console.log('pr');
+				// console.log('pr');
 
 				// repeatedDomain(existing.registeredDomains, 'pr');
 				domainRegistration = await prisma.pr.create({
@@ -287,9 +279,10 @@ export async function POST(req, res) {
 		// const data = await emailData.json();
 		// console.log(data);
 
-		console.log(updatedRookie)
+		// console.log(updatedRookie)
 
-		
+	
+
 		return NextResponse.json(
 			{
 				updatedRookie,

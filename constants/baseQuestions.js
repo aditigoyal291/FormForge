@@ -1,4 +1,4 @@
-export const maxDomainCount = 2;
+export const maxDomainCount = 5;
 
 export const semesterOptions = [
   {

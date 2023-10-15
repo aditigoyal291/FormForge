@@ -52,7 +52,7 @@ export async function POST(req, res) {
 			},
 		});
 
-		console.log(newRegistration);
+		// console.log(newRegistration);
 		return NextResponse.json(
 			{
 				newRegistration,

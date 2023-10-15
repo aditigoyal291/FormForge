@@ -7,11 +7,11 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req, res) {
 
-	console.log('i am running');
+	// console.log('i am running');
 
 	const body = await req.json();
 	console.log(body);
-	console.log('from route.js');
+	// console.log('from route.js');
 
 	try {
 		console.log('i am running 2');
@@ -22,8 +22,8 @@ export async function POST(req, res) {
 			subject: 'Registration Done',
 			react: Register(body),
 		});
-		console.log('i am running 3');
-        console.log(emailData)
+		// console.log('i am running 3');
+        console.log(emailData, 'email data')
         
 		return NextResponse.json(emailData);
 	} catch (error) {
