@@ -6,9 +6,9 @@ import { FaGithub } from "react-icons/fa";
 const page = () => {
   return (
     <div className="text-white min-h-screen flex items-center justify-center flex-col gap-5">
-      <div class="rounded-full bg-gradient-to-r from-green-700 via-green-500  via-yellow-500 via-orange-400 via-pink-400 to-indigo-800 p-px mb-5">
-        <div class="flex  items-center  bg-background  gap-2  rounded-full py-1 px-3">
-          <p class="text-sm text-white font-normal">Exclusively for PESU</p>
+      <div className="rounded-full bg-gradient-to-r from-green-700 via-green-500  via-yellow-500 via-orange-400 via-pink-400 to-indigo-800 p-px mb-5">
+        <div className="flex  items-center  bg-background  gap-2  rounded-full py-1 px-3">
+          <p className="text-sm text-white font-normal">Exclusively for PESU</p>
           <span>
             <AiOutlineRight className="text-[8px]" />
           </span>
