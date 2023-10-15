@@ -6,7 +6,6 @@ const DomainList = ({ setPage, setDomain }) => {
 	const handleDomainChange = (e) => {
 		e.preventDefault();
 		if (domains !== null || domains !== undefined) {
-			console.log('heleldfas');
 			setPage(3);
 			return;
 		}

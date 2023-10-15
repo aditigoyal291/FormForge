@@ -1,7 +1,5 @@
 import { maxDomainCount } from '@/constants/baseQuestions';
-import { clubDetails } from '@/constants/clubDetails';
 import prisma from '@/utils/prisma';
-import sendEmail from '@/utils/sendEmail';
 import { NextResponse } from 'next/server';
 
 export async function POST(req, res) {
@@ -291,24 +289,7 @@ export async function POST(req, res) {
 
 		console.log(updatedRookie)
 
-		try {
-			const data = await sendEmail({
-				domain: domain,
-				username: updatedRookie.name,
-				useremail: updatedRookie.email,
-				invitedByUsername: clubDetails.club.name,
-				clubEmail: clubDetails.club.email,
-				clubWebsite: clubDetails.club.website,
-				clubInstagram: clubDetails.club.instagram,
-				clubName: clubDetails.club.name,
-				prn: updatedRookie.prn,
-				registrationId: updatedRookie.id,
-			});
-			console.log(data)
-		} catch (error) {
-			console.log('could not send email');
-		}
-
+		
 		return NextResponse.json(
 			{
 				updatedRookie,

@@ -11,6 +11,8 @@ import { questions } from '../../constants/question';
 import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Message from '../Message';
+import { clubDetails } from '@/constants/clubDetails';
+import sendEmail from '@/utils/sendEmail';
 
 const DomainQuestion = ({
 	setPage,
@@ -60,6 +62,25 @@ const DomainQuestion = ({
 			});
 
 			if (data.code === 2) {
+
+				try {
+					const emailData = await sendEmail({
+						domain: domain,
+						username: data.name,
+						useremail: data.email,
+						invitedByUsername: clubDetails.club.name,
+						clubEmail: clubDetails.club.email,
+						clubWebsite: clubDetails.club.website,
+						clubInstagram: clubDetails.club.instagram,
+						clubName: clubDetails.club.name,
+						prn: data.prn,
+						registrationId: data.id,
+					});
+					console.log(emailData);
+				} catch (error) {
+					console.log('could not send email');
+				}
+
 				setTimeout(() => {
 					setPage(2);
 				}, 2000);
