@@ -102,8 +102,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<TextInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else if (inputType === 'email') {
@@ -111,8 +111,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<EmailInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else if (inputType === 'radio') {
@@ -120,8 +120,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<RadioInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else if (inputType === 'tel') {
@@ -129,8 +129,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<TelInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else if (inputType === 'checkbox') {
@@ -138,8 +138,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<CheckboxInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else if (inputType === 'range') {
@@ -147,8 +147,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<RangeInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else if (inputType === 'textarea') {
@@ -156,8 +156,8 @@ const Form = ({ setUserData, userData, setPage }) => {
 							<TextAreaInput
 								key={question.id}
 								loading={loading}
-								{...question}
 								handleChange={handleChange}
+								{...question}
 							/>
 						);
 					} else {

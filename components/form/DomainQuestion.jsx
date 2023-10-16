@@ -29,6 +29,11 @@ const DomainQuestion = ({
 		setDomainData({ ...domainData, [e.target.name]: e.target.value });
 	};
 
+	const handleBack = () => {
+		setDomainData({});
+		setPage(2);
+	};
+
 	const domainQuestions = questions.find(
 		(domain_) => domain === domain_.domain
 	);
@@ -67,18 +72,18 @@ const DomainQuestion = ({
 
 			if (data.code === 2) {
 				try {
-					console.log({
-						domain: domain,
-						username: data.updatedRookie.name,
-						useremail: data.updatedRookie.email,
-						invitedByUsername: club.club.name,
-						clubEmail: club.club.email,
-						clubWebsite: club.club.website,
-						clubInstagram: club.club.instagram,
-						clubName: club.club.name,
-						prn: data.updatedRookie.prn,
-						registrationId: data.updatedRookie.id,
-					});
+					// console.log({
+					// 	domain: domain,
+					// 	username: data.updatedRookie.name,
+					// 	useremail: data.updatedRookie.email,
+					// 	invitedByUsername: club.club.name,
+					// 	clubEmail: club.club.email,
+					// 	clubWebsite: club.club.website,
+					// 	clubInstagram: club.club.instagram,
+					// 	clubName: club.club.name,
+					// 	prn: data.updatedRookie.prn,
+					// 	registrationId: data.updatedRookie.id,
+					// });
 					console.log('domain question');
 
 					const emailData = await sendEmail({
@@ -98,7 +103,7 @@ const DomainQuestion = ({
 				}
 
 				setTimeout(() => {
-					setPage(2);
+					handleBack();
 				}, 2000);
 			}
 		} catch (error) {
@@ -208,7 +213,7 @@ const DomainQuestion = ({
 					<div className="grid grid-cols-2 gap-2">
 						<Button
 							type="button"
-							handleClick={() => setPage(2)}
+							handleClick={handleBack}
 							variant="mute"
 						>
 							Back

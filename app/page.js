@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 const page = () => {
 	return (
-		<div className="py-4 outline flex flex-col mx-auto min-h-[100svh]">
+		<div className="py-4 flex flex-col mx-auto min-h-[100svh]">
 			<Navbar />
 			<div className="flex-1 h-full flex items-center justify-center flex-col gap-5 mt-[5%] md:mt-[3%]">
 

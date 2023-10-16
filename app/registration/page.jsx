@@ -13,8 +13,8 @@ const RegistrationPage = () => {
 	const [domainData, setDomainData] = useState({});
 	return (
 		<>
-				<Navbar />
-			<main className="main my-1 mx-4 sm:mx-14 md:mx-auto max-w-screen-xl gap-y-10 md:gap-y-14 flex justify-center flex-col">
+			<Navbar />
+			<main className="main my-10 mx-4 sm:mx-14 md:mx-auto max-w-screen-xl gap-y-10 md:gap-y-14 flex justify-center flex-col">
 				<div className="gradient flex flex-col gap-16">
 					{/* <SubHero
 						title="Recruitment"

@@ -5,25 +5,26 @@ export const semesterOptions = [
 		id: 1,
 		htmlForLabel: 'semester1',
 		value: 1,
-		// name: 'semester',
+		required: true,
+	
 	},
 	{
 		id: 2,
 		htmlForLabel: 'semester2',
 		value: 2,
-		// name: 'semester',
+		required: true,
 	},
 	{
 		id: 3,
 		htmlForLabel: 'semester3',
 		value: 3,
-		// name: 'semester',
+		required: true,
 	},
 	{
 		id: 4,
 		htmlForLabel: 'semester4',
 		value: 4,
-		// name: 'semester',
+		required: true,
 	},
 ];
 
@@ -32,37 +33,37 @@ export const courseOptions = [
 		id: 1,
 		htmlForLabel: 'course1',
 		value: 'B.Tech CSE',
-		// name: 'course',
+		required: true,
 	},
 	{
 		id: 2,
 		htmlForLabel: 'course2',
 		value: 'B.Tech EEE',
-		// name: 'course',
+		required: true,
 	},
 	{
 		id: 3,
 		htmlForLabel: 'course3',
 		value: 'B.Tech ECE',
-		// name: 'course',
+		required: true,
 	},
 	{
 		id: 4,
 		htmlForLabel: 'course4',
 		value: 'M.Tech',
-		// name: 'course',
+		required: true,
 	},
 	{
 		id: 5,
 		htmlForLabel: 'course5',
 		value: 'B.Design',
-		// name: 'course',
+		required: true,
 	},
 	{
 		id: 6,
 		htmlForLabel: 'course6',
 		value: 'Psychology',
-		// name: 'course',
+		required: true,
 	},
 ];
 
@@ -93,7 +94,7 @@ export const generalQuestions = [
 		name: 'prn',
 		inputType: 'text',
 		minLength: 13,
-		pattern: '^(pes1202|PES1202)(2|3)[0-9]{5}$',
+		pattern: '^(pes|PES|Pes|pEs|peS|PEs|PeS|pES)1202(2|3)[0-9]{5}$',
 		maxLength: 13,
 		minLength: 13,
 		placeholder: 'PES1202[2/3]XXXXX',

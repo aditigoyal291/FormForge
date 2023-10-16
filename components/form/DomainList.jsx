@@ -50,10 +50,10 @@ const DomainList = ({ setPage, setDomain }) => {
 						>
 							<label
 								htmlFor={domain.name}
-								className="relative border-foreground/10 border-[1px] hover:bg-foreground/10 font-medium hover:shadow-lg bg-foreground/5 shadow-md cursor-pointer p-4 flex items-center justify-center rounded-md z-10 w-full"
+								className="relative bg-foreground/[0.04] hover:bg-foreground/10 border-foreground/10 focus:outline-secondary border-[1px] font-medium hover:shadow-lg shadow-md cursor-pointer p-4 flex items-center justify-center rounded-md z-10 w-full"
 							>
 								<div className="flex flex-col gap-y-1 w-full p-2">
-									<div className="flex gap-4 ">
+									<div className="flex gap-4">
 										<h2 className="text-base font-semibold text-foreground">
 											{domain.domain}
 										</h2>

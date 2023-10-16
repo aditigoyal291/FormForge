@@ -12,7 +12,22 @@ export function TextInput({
 	id,
 	minLength,
 	maxLength,
+	...props
 }) {
+	console.log({
+		placeholder,
+		required: true,
+		loading: false,
+		pattern: '.*',
+		validationStyle: false,
+		handleChange,
+		name,
+		question,
+		id,
+		minLength,
+		maxLength,
+		...props,
+	});
 	return (
 		<label
 			htmlFor={name}
@@ -25,6 +40,7 @@ export function TextInput({
 			</span>
 			<div className="flex flex-col gap-4  w-full">
 				<input
+					{...props}
 					type="text"
 					pattern={pattern}
 					required={required}
@@ -102,6 +118,7 @@ export function EmailInput({
 	id,
 	pattern,
 	placeholder,
+	...props
 }) {
 	return (
 		<label
@@ -117,6 +134,7 @@ export function EmailInput({
 			</span>
 			<div className="flex flex-col gap-4  w-full">
 				<input
+					{...props}
 					type="text"
 					required={required}
 					pattern={pattern}

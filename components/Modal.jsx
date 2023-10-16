@@ -136,6 +136,7 @@ const Modal = ({
 								placeholder="johndoe@gmail.com"
 								validationStyle={true}
 								handleChange={handleChange}
+								value={userData?.email}
 								pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
 							/>
 							<TextInput
@@ -146,7 +147,8 @@ const Modal = ({
 								placeholder="PES1202[2/3]XXXXX"
 								validationStyle={true}
 								handleChange={handleChange}
-								pattern="^(pes1202|PES1202)(2|3)[0-9]{5}$"
+								value={userData?.prn}
+								pattern='^(pes|PES|Pes|pEs|peS|PEs|PeS|pES)1202(2|3)[0-9]{5}$'
 							/>
 
 							{/* <label
