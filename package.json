@@ -1,7 +1,8 @@
 {
-	"name": "registration-form",
+	"name": "form-forge",
 	"version": "0.1.0",
-	"private": true,
+	"description": "Form forege: Form for developers",
+	"bin": "./bin/cli.js",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
