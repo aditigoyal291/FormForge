@@ -30,7 +30,6 @@ const Modal = ({
 
 		try {
 			const tempData = {
-				...userData,
 				prn: userData.prn.toLowerCase(),
 				email: userData.email.toLowerCase(),
 			};
