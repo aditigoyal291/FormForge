@@ -1,26 +1,27 @@
-import Link from "next/link";
-import React from "react";
-import { FaGithub } from "react-icons/fa";
+import Link from 'next/link';
+import React from 'react';
+import { FaGithub } from 'react-icons/fa';
+import ToggleThemeButton from './ToggleThemeButton';
 
 const Navbar = () => {
-  return (
-		<div className="text-white flex justify-between xl:mx-28">
-			<div className="p-4 flex gap-2 items-center">
+	return (
+		<div className="text-foreground flex justify-between xl:mx-28">
+			<Link href="/" className="p-4 flex gap-1 sm:gap-2 items-center">
 				Form Forge
-				{/* <span className="text-xs rounded text-primary border-[1px] border-opacity-10 border-primary px-1 p-px"> */}
 				<span className="text-xs rounded px-1.5 py-0.5 bg-cyan-2 text-secondary border-secondary border-[1.5px] inline-flex items-center justify-center font-medium">
 					Beta
 				</span>
-			</div>
-			<div className="flex text-sm p-4 gap-3 text-foreground-muted items-center">
-				<a href="/">Docs</a>
-				<a href="/">Examples</a>
+			</Link>
+			<div className="flex text-xs sm:text-sm p-4 gap-2 md:gap-4 text-foreground-muted items-center">
+				<Link href="/">Docs</Link>
+				<Link href="/">Examples</Link>
 				<Link href="https://github.com/aditigoyal291/Form">
 					<FaGithub className="text-xl ml-3" />
 				</Link>
+				<ToggleThemeButton />
 			</div>
 		</div>
-  );
+	);
 };
 
 export default Navbar;

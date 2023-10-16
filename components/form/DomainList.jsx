@@ -57,7 +57,7 @@ const DomainList = ({ setPage, setDomain }) => {
 										<h2 className="text-base font-semibold text-foreground">
 											{domain.domain}
 										</h2>
-										<p className="whitespace-nowrap shadow-2xl h-fit px-3 rounded-md outline-none bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold flex items-center justify-center text-xxs">
+										<p className="text-white whitespace-nowrap shadow-2xl h-fit px-3 rounded-md outline-none bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold flex items-center justify-center text-xxs">
 											{domain.type === 'tech'
 												? 'Tech'
 												: 'Non-Tech'}
@@ -74,7 +74,7 @@ const DomainList = ({ setPage, setDomain }) => {
 									id={domain.name}
 									value={domain.name}
 									required
-									className="self-start box-content rounded-full bg-foreground/20 p-1 ring-foreground/20 bg-clip-padding outline-none ring-1  checked:border-primary checked:border-[4px] checked:ring-primary w-2 appearance-none h-2 checked:bg-foreground/80 border-[5px] border-foreground/20"
+									className="self-start box-content rounded-full bg-foreground/20 p-1 ring-foreground/20 bg-clip-padding outline-none ring-1  checked:border-primary checked:border-[4px] checked:ring-primary w-2 appearance-none h-2 checked:bg-white/80 border-[5px] border-foreground/20"
 								/>
 							</label>
 						</div>

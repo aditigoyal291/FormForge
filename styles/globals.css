@@ -4,14 +4,38 @@
 
 @layer base {
 	:root {
-		--background: 270 25% 2%;
-		--foreground: 210 20% 98%;
-		--foreground-muted: 214 32% 91%;
+		--foreground: 270 25% 2%;
+		--background: 210 20% 98%;
+		--foreground-muted: 222, 47%, 11%; 
 		--primary: 203 100% 50%;
 		--secondary: 214 100% 49%;
 		/* --primary: 347, 77%, 50%; */
 		/* --secondary: 345, 83%, 41%; */
 
+		--radius: 0.3rem;
+		--message-warn-background: 26, 83%, 14%;
+		--message-warn-foreground: 50, 98%, 64%;
+		--message-success-background: 171, 77%, 64%;
+		--message-success-foreground: 176, 61%, 19%;
+		--message-info-background: 226, 57%, 21%;
+		--message-info-foreground: 212, 96%, 78%;
+		--message-error-background: 0, 75%, 15%;
+		--message-error-foreground: 0, 94%, 82%;
+
+		--modal-background: 210, 40%, 96%;
+
+		--input: 215 27.9% 16.9%;
+	}
+	
+	.dark{
+		--background: 270 25% 2%;
+		--foreground: 210 20% 98%;
+		--foreground-muted: 213, 27%, 84%;
+		--primary: 203 100% 50%;
+		--secondary: 214 100% 49%;
+		/* --primary: 347, 77%, 50%; */
+		/* --secondary: 345, 83%, 41%; */
+	
 		--radius: 0.3rem;
 		--message-warn-foreground: 26, 83%, 14%;
 		--message-warn-background: 50, 98%, 64%;
@@ -21,33 +45,30 @@
 		--message-info-background: 212, 96%, 78%;
 		--message-error-foreground: 0, 75%, 15%;
 		--message-error-background: 0, 94%, 82%;
-
+	
 		--modal-background: 0, 0%, 4%;
-
+	
 		--input: 215 27.9% 16.9%;
-	}
 
-	.radio-label:has(
-			input[type='radio']:checked,
-			input[type='checkbox']:checked
-		) {
-		outline: 3px solid hsl(var(--secondary));
-		color: #fff;
 	}
+}
+.radio-label:has(input[type='radio']:checked, input[type='checkbox']:checked) {
+	outline: 3px solid hsl(var(--secondary));
+	/* color: white; */
+}
 
-	input[type='number']::-webkit-inner-spin-button,
-	input[type='number']::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-	}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
 
-	.main {
-		background: url('./../public/sample-bg.jpg') no-repeat top center;
-	}
+.main {
+	/* background: url('./../public/sample-bg.jpg') no-repeat top center; */
+}
 
-	.gradient {
-		background-image: radial-gradient(
-			transparent 20%,
-			hsl(var(--background)) 60%
-		);
-	}
+.gradient {
+	background-image: radial-gradient(
+		transparent 20%,
+		hsl(var(--background)) 60%
+	);
 }

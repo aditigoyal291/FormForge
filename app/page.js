@@ -10,16 +10,16 @@ const page = () => {
 			<Navbar />
 			<div className="flex-1 h-full flex items-center justify-center flex-col gap-5 mt-[5%] md:mt-[3%]">
 
-				<div className="absolute bg-foreground/20 right-10 max-w-[70px] blur-[100px]  -rotate-12 h-2/5 w-1/6 rounded-full" />
-				<div className="w-1/6 max-h-[250px] h-1/6 absolute rounded-full blur-[80px] bg-foreground/10 left-[2%] top-[10%] md:top-[15%]" />
-				<div className='absolute  bg-foreground/30 bottom-10 left-[35%] max-h-[50px] h-1/6 w-[6%] blur-[80px]'/>
-				<div className='absolute  bg-foreground/5 bottom-[20%] left-16 max-h-[50px] h-1/6 w-[6%] blur-[50px]'/>
+				<div className="absolute bg-foreground/50 right-10 max-w-[70px] blur-[100px]  -rotate-12 h-2/5 w-1/6 rounded-full" />
+				<div className="w-1/6 max-h-[250px] h-1/6 absolute rounded-full blur-[80px] bg-foreground/20 left-[2%] top-[10%] md:top-[15%]" />
+				<div className='absolute  bg-foreground/40 bottom-10 left-[35%] max-h-[50px] h-1/6 w-[6%] blur-[80px]'/>
+				<div className='absolute  bg-foreground/20 bottom-[20%] left-16 max-h-[50px] h-1/6 w-[6%] blur-[50px]'/>
 
 
 				<div className="flex-1 h-full flex-col my-auto flex items-center justify-center">
-					<div className="rounded-full bg-gradient-to-r from-green-700 via-green-500 via-yellow-500 via-orange-400 via-pink-400 to-indigo-800 p-px mb-5">
+					<div className="flex items-center justify-center rounded-full bg-gradient-to-r from-green-700 via-green-500 via-yellow-500 via-orange-400 via-pink-400 to-indigo-800 py-[2px] px-[2.5px]  mb-5">
 						<div className="flex items-center justify-center bg-background gap-2 rounded-full py-1 px-3">
-							<p className="text-sm text-white font-normal">
+							<p className="text-sm text-foreground font-normal">
 								Exclusively for PESU
 							</p>
 							<span>

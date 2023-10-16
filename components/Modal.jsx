@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import Message from './Message';
 import Button from './Button';
@@ -100,11 +99,11 @@ const Modal = ({
 	// const condition = false;
 	return (
 		<>
-			<div className="text-foreground fixed z-50 md:mx-2 md:p-10 bg-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
+			<div className="text-foreground fixed z-50 md:mx-2 md:p-10 bg-modal-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
 				<div className="relative w-full md:max-w-lg bg-modal-background outline-foreground/10 backdrop-blur-2xl outline p-5 rounded-md justify-center flex flex-col gap-y-4">
 					<button
 						onClick={handleCrossClick}
-						className="absolute right-3 p-1 rounded-md top-3 hover:bg-slate-900/90 w-6 h-6 flex items-center justify-center"
+						className="absolute right-3 p-1 rounded-md top-3 hover:bg-foreground-muted/10 w-6 h-6 flex items-center justify-center"
 					>
 						<RxCross1 className="" />
 					</button>
