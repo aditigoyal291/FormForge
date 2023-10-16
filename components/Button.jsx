@@ -49,7 +49,7 @@ const Button = ({
 			onClick={handleClick}
 			className={`${
 				variant === 'mute'
-					? 'bg-foreground/5 hover:bg-foreground/10 border-foreground/10 focus:outline-secondary focus:outline shadow-sm border-[1px]'
+					? 'bg-foreground/5 hover:bg-foreground/10 border-foreground/10 focus:outline-secondary focus:outline shadow-sm border-[1px] backdrop-blur'
 					: variant === 'plain'
 					? 'bg-foreground text-background hover:bg-foreground-muted outline outline-foreground/10 shadow-md border-[1px]'
 					: variant === 'ghost'

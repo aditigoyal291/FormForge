@@ -10,9 +10,9 @@ const page = () => {
 			<Navbar />
 			<div className="flex-1 h-full flex items-center justify-center flex-col gap-5 mt-[5%] md:mt-[3%]">
 
-				<div className="absolute bg-foreground/50 right-10 max-w-[70px] blur-[100px]  -rotate-12 h-2/5 w-1/6 rounded-full" />
-				<div className="w-1/6 max-h-[250px] h-1/6 absolute rounded-full blur-[80px] bg-foreground/20 left-[2%] top-[10%] md:top-[15%]" />
-				<div className='absolute  bg-foreground/40 bottom-10 left-[35%] max-h-[50px] h-1/6 w-[6%] blur-[80px]'/>
+				<div className="absolute bg-foreground/30 right-10 max-w-[70px] blur-[100px]  -rotate-12 h-2/5 w-1/6 rounded-full" />
+				<div className="w-1/6 max-h-[250px] h-1/6 absolute rounded-full blur-[80px]  left-[2%] top-[10%] md:top-[15%]" />
+				<div className='absolute  bg-foreground/30 bottom-10 left-[35%] max-h-[50px] h-1/6 w-[6%] blur-[80px]'/>
 				<div className='absolute  bg-foreground/20 bottom-[20%] left-16 max-h-[50px] h-1/6 w-[6%] blur-[50px]'/>
 
 
@@ -47,7 +47,7 @@ const page = () => {
 								className="w-full max-w-xs shadow-md"
 							>
 								<div className="bg-gradient-to-r from-foreground-muted/60 via-foreground/60 to-foreground-muted/90 p-px rounded-lg">
-									<button className="bg-background hover:bg-modal-background px-6 rounded-lg w-full text-background p-2 items-center flex justify-center gap-x-3">
+									<button className="bg-foreground/5 hover:bg-modal-background px-6 rounded-lg w-full text-background p-2 items-center flex justify-center gap-x-3">
 										<span className="font-semibold text-sm text-foreground-muted">
 											Github
 										</span>
