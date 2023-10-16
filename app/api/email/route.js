@@ -18,8 +18,8 @@ export async function POST(req, res) {
 		const emailData = await resend.sendEmail({
 			// from: 'email@zenohash.dev',
 			from: 'onboardin@resend.dev',
-			// to: 'sarangkumar1578@gmail.com',
-			to: body.useremail,
+			to: 'sarangkumar1578@gmail.com',
+			// to: body.useremail,
 			subject: 'Registration Done',
 			react: Register(body),
 		});

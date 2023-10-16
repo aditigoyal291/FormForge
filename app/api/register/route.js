@@ -58,7 +58,7 @@ export async function POST(req, res) {
 				newRegistration,
 				code: 2,
 				type: 'success',
-				message: 'User signin successfull',
+				message: 'User signin successful',
 				description: 'Now proceed to choose your domain of interest',
 			},
 			{ status: 200 }
