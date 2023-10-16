@@ -4,7 +4,6 @@ import { RxCross1 } from 'react-icons/rx';
 import Message from './Message';
 import Button from './Button';
 
-
 const Modal = ({
 	setUserData,
 	userData,
@@ -21,7 +20,6 @@ const Modal = ({
 		type: '',
 	});
 
-
 	function handleCrossClick() {
 		setModelIsOpen(false);
 	}
@@ -30,18 +28,14 @@ const Modal = ({
 		e.preventDefault();
 		setLoading(true);
 
-
-
 		try {
-	const tempData = {
+			const tempData = {
 				...userData,
 				prn: userData.prn.toLowerCase(),
-				name: userData.name.toLowerCase(),
 				email: userData.email.toLowerCase(),
 			};
 
 			setUserData(tempData);
-
 
 			const res = await fetch('/api/retrieve', {
 				method: 'POST',

@@ -261,9 +261,9 @@ const Form = ({ setUserData, userData, setPage }) => {
 				</div>
 				<div className="flex gap-1">
 					<p className="text-xs">
-						in case something doesn&apos;t work, feel free to
+						In case something doesn&apos;t work, feel free to
 					</p>
-					<span className="text-xs text-secondary underline">
+					<span className="text-xs text-secondary font-medium whitespace-nowrap">
 						<a href="mailto:sarangkumar1578@gmail.com?cc=adiigoyal2912@gmail.com&subject=This link is not working">
 							Contact us
 						</a>
