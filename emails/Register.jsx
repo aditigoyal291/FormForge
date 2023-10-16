@@ -46,7 +46,7 @@ export const Register = ({
 							/>
 						</Section>
 						<Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-							Registration Successfull
+							Registration Successful
 						</Heading>
 						<Text>
 							Registered for <strong>{domain}</strong> domain

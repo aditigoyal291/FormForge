@@ -6,6 +6,8 @@ import {
 	SelectInput,
 	TextAreaInput,
 	TextInput,
+	EmailInput,
+	TelInput,
 } from './Inputs';
 import { questions } from '../../constants/question';
 import { useRouter } from 'next/navigation';
@@ -142,9 +144,25 @@ const DomainQuestion = ({
 									handleChange={handleChange}
 								/>
 							);
+						} else if (inputType === 'email') {
+							return (
+								<EmailInput
+									key={question.id}
+									{...question}
+									handleChange={handleChange}
+								/>
+							);
 						} else if (inputType === 'radio') {
 							return (
 								<RadioInput
+									key={question.id}
+									{...question}
+									handleChange={handleChange}
+								/>
+							);
+						} else if (inputType === 'tel') {
+							return (
+								<TelInput
 									key={question.id}
 									{...question}
 									handleChange={handleChange}

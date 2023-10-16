@@ -3,6 +3,7 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import Message from './Message';
 import Button from './Button';
+import { EmailInput, TextInput } from './form/Inputs';
 
 const Modal = ({
 	setUserData,
@@ -99,7 +100,7 @@ const Modal = ({
 	// const condition = false;
 	return (
 		<>
-			<div className="text-foreground fixed z-50 md:p-10 bg-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
+			<div className="text-foreground fixed z-50 md:mx-2 md:p-10 bg-background/50 backdrop-blur-2xl flex justify-center items-center flex-col gap-7 h-full w-full ">
 				<div className="relative w-full md:max-w-lg bg-modal-background outline-foreground/10 backdrop-blur-2xl outline p-5 rounded-md justify-center flex flex-col gap-y-4">
 					<button
 						onClick={handleCrossClick}
@@ -125,32 +126,31 @@ const Modal = ({
 
 					<div className="rounded-lg flex items-center justify-center  w-full">
 						<form
-							// action=""
 							onSubmit={(e) => handleSubmit(e)}
 							className="w-full flex gap-y-5 flex-col accent-secondary text-xs"
 						>
+							<EmailInput
+								question="Enter Email"
+								required={true}
+								name="email"
+								loading={loading}
+								placeholder="johndoe@gmail.com"
+								validationStyle={true}
+								handleChange={handleChange}
+								pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+							/>
+							<TextInput
+								question="Enter PRN"
+								required={true}
+								name="prn"
+								loading={loading}
+								placeholder="PES1202[2/3]XXXXX"
+								validationStyle={true}
+								handleChange={handleChange}
+								pattern="^(pes1202|PES1202)(2|3)[0-9]{5}$"
+							/>
+
 							{/* <label
-								htmlFor="name"
-								className="space-y-1"
-							>
-								<span
-									className={`block after:content-[\'*\'] after:text-secondary text-slate-100 font-medium text-xs`}
-								>
-									Enter your Name
-								</span>
-								<input
-									onChange={(e) => handleChange(e)}
-									type="text"
-									placeholder="John Doe"
-									className="w-full bg-foreground/5 focus:shadow focus:shadow-secondary p-2 outline-foreground/10 outline-offset-0 rounded-md lowercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
-									value={userData?.name}
-									id="name"
-									name="name"
-									required
-									disabled={loading}
-								/>
-							</label> */}
-							<label
 								htmlFor="email"
 								className="space-y-1"
 							>
@@ -194,7 +194,7 @@ const Modal = ({
 									disabled={loading}
 									required
 								/>
-							</label>
+							</label> */}
 							<div className="flex justify-between w-full gap-3 mt-5">
 								<Button
 									type="submit"

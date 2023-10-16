@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Message from '../Message';
 import Modal from '../Modal';
-import { courseOptions, semesterOptions } from '@/constants/baseQuestions';
+import { generalQuestions } from '@/constants/baseQuestions';
 import club from './../../constants/club';
 import Button from '../Button';
+import {
+	CheckboxInput,
+	EmailInput,
+	RadioInput,
+	RangeInput,
+	SelectInput,
+	TelInput,
+	TextAreaInput,
+	TextInput,
+} from './Inputs';
 
 const Form = ({ setUserData, userData, setPage }) => {
 	const [loading, setLoading] = useState(false);
@@ -50,7 +60,6 @@ const Form = ({ setUserData, userData, setPage }) => {
 			});
 
 			if (data.code === 2) {
-				// setUserData({...userData, registeredDomains: data.registeredDomains})
 				setTimeout(() => setPage(2), 3000);
 			}
 		} catch (error) {
@@ -84,7 +93,83 @@ const Form = ({ setUserData, userData, setPage }) => {
 				<h1 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-secondary via-secondary/80 to-primary animate-gradient font-semibold tracking-tight">
 					{club.club.name} Registrations
 				</h1>
-				<label
+
+				{generalQuestions.map((question) => {
+					const { inputType } = question;
+
+					if (inputType === 'text') {
+						return (
+							<TextInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else if (inputType === 'email') {
+						return (
+							<EmailInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else if (inputType === 'radio') {
+						return (
+							<RadioInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else if (inputType === 'tel') {
+						return (
+							<TelInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else if (inputType === 'checkbox') {
+						return (
+							<CheckboxInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else if (inputType === 'range') {
+						return (
+							<RangeInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else if (inputType === 'textarea') {
+						return (
+							<TextAreaInput
+								key={question.id}
+								loading={loading}
+								{...question}
+								handleChange={handleChange}
+							/>
+						);
+					} else {
+						return (
+							<SelectInput
+								key={question.id}
+								loading={loading}
+							/>
+						);
+					}
+				})}
+				{/* <label
 					htmlFor="name"
 					className="flex flex-col gap-y-1 w-full "
 				>
@@ -137,6 +222,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 							autoCorrect="off"
 							placeholder="PES1202[2/3]XXXXX"
 							value={userData?.prn}
+							pattern="^(pes1202|PES1202)[23]\d{5}$"
 							id="prn"
 							className="bg-foreground/5 p-2 outline-foreground/10 outline-offset-0 rounded-md uppercase focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 							maxLength={13}
@@ -148,7 +234,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						htmlFor="phone"
 						className="flex flex-col gap-y-1 w-full"
 					>
-						<span className=" text-foreground/90 after:content-['*'] after:text-secondary font-medium text-xs">
+						<span className="text-foreground/90 after:content-['*'] after:text-secondary font-medium text-xs">
 							Enter your phone number
 						</span>
 						<input
@@ -225,7 +311,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 						id="bio"
 						className=" bg-foreground/5 p-2 border-foreground/10 border-[1px]  rounded-md focus:outline-secondary focus:outline-offset-0 focus:outline focus:ring-0 focus:border-0 focus:border-none focus:border-b-2 outline-none shadow-md"
 					/>
-				</label>
+				</label> */}
 				<p className="text-xs font-medium before:content-['*']">
 					Already registered for one domain, no need to register again
 					just{' '}
