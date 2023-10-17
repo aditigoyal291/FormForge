@@ -13,8 +13,8 @@ const ToggleThemeButton = () => {
       size="icon"
       handleClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-      <BsSunFill className="h-[1.5rem] w-[1.3rem] dark:block" />
-      <BsFillMoonFill className="hidden h-5 w-5 dark:hidden" />
+      <BsSunFill className="hidden h-[1.5rem] w-[1.3rem] dark:block" />
+      <BsFillMoonFill className="block h-5 w-5 dark:hidden" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

@@ -341,6 +341,7 @@ const Form = ({ setUserData, userData, setPage }) => {
 					<Button
 						type="submit"
 						loading={loading}
+						className="text-white"
 					>
 						Register
 					</Button>
