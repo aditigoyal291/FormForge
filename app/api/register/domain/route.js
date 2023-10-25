@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req, res) {
 	try {
-		const body = await req.json();
+		const body = await res.json();
 		const { domain, email, prn } = body;
 		// console.log(body);
 

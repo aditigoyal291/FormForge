@@ -15,6 +15,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NODE_ENV && (
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9615068362549302"
+            crossorigin="anonymous"></script>
+        )}
+      </head>
+
       <body className={`${poppins.className} bg-background`}>
         <Provider attribute="class" defaultTheme="system" enableSystem>
           {children}
